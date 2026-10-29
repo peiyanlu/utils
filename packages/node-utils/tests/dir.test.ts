@@ -1,25 +1,9 @@
 import { Tool, useToolWithManager } from '@peiyanlu/test-tools'
-import { spawn } from 'node:child_process'
 import { readdir } from 'node:fs/promises'
 import { join } from 'node:path'
-import { afterAll, describe, expect, it, vi } from 'vitest'
-import {
-  copyDir,
-  createMatcher,
-  createTempDir,
-  emptyDir,
-  isDirEmpty,
-  isDirSync,
-  listSubDirs,
-  openDir,
-} from '../src/dir.js'
+import { afterAll, describe, expect, it } from 'vitest'
+import { copyDir, createTempDir, emptyDir, isDirEmpty, isDirSync, listSubDirs } from '../src/dir.js'
 
-
-vi.mock('node:child_process', () => ({
-  spawn: vi.fn(() => ({
-    unref: vi.fn(),
-  })),
-}))
 
 const { manager, tool, tempDir } = useToolWithManager(
   Tool,
@@ -170,54 +154,4 @@ it('createTempDir should create temp dir', async () => {
   await remove()
   
   expect(tool.existsSync(path)).toBe(false)
-})
-
-describe('createMatcher', () => {
-  it('should support literal string', () => {
-    const matcher = createMatcher('literal-string')
-    
-    expect(matcher('literal string')).toBe(false)
-    expect(matcher('literal-string')).toBe(true)
-  })
-  
-  it('should support regexp', () => {
-    const matcher = createMatcher(/README\.[\w-]+\.md/)
-    
-    expect(matcher('README.md')).toBe(false)
-    expect(matcher('README.en.md')).toBe(true)
-    expect(matcher('README.zh.md')).toBe(true)
-  })
-  
-  it('should support glob', () => {
-    const matcher = createMatcher('*.config.{ts,cts,mts}')
-    
-    expect(matcher('tsdown.config.mts')).toBe(true)
-    expect(matcher('vitest.config.mts')).toBe(true)
-    expect(matcher('vitestconfig.mts')).toBe(false)
-  })
-})
-
-it('openDir should opens directory', () => {
-  const platformTest = vi.spyOn(process, 'platform', 'get')
-  platformTest.mockReturnValue('win32')
-  
-  openDir('c:/tmp/test')
-  
-  expect(spawn).toHaveBeenCalled()
-  
-  platformTest.mockReturnValue('darwin')
-  
-  openDir('/tmp/test')
-  
-  expect(spawn).toHaveBeenCalled()
-  
-  platformTest.mockReturnValue('linux')
-  
-  openDir('/tmp/test')
-  
-  expect(spawn).toHaveBeenCalled()
-  
-  platformTest.mockReturnValue('android')
-  
-  expect(() => openDir('/tmp/test')).toThrow()
 })

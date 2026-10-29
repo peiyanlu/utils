@@ -15,3 +15,7 @@ export * from './path.js'
 export * from './platform.js'
 
 export * from './worker.js'
+
+export * from './stream.js'
+
+export * from './process.js'

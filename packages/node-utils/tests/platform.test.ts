@@ -2,8 +2,6 @@ import { expect, it, vi } from 'vitest'
 import { isPlatform } from '../src/platform.js'
 
 
-
-
 it('isPlatform', () => {
   const platformTest = vi.spyOn(process, 'platform', 'get')
   platformTest.mockReturnValue('win32')

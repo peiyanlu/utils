@@ -15,19 +15,12 @@ Lightweight utilities for Node.js development.
 ## Installation
 
 ```shell
-# npm
-npm add @peiyanlu/node-utils
-
-# yarn
-yarn add @peiyanlu/node-utils
-
-# pnpm
 pnpm add @peiyanlu/node-utils
 ```
 
 ## Usage
 
 ```ts
-import {} from '@peiyanlu/node-utils'
-import type {} from '@peiyanlu/node-utils'
+import { readTextFile, writeTextFile, editFile, editJsonFile, readJsonFile, writeJsonFile, emptyDir } from '@peiyanlu/node-utils'
+import type { CopyDirOptions } from '@peiyanlu/node-utils'
 ```
