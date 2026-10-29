@@ -1,0 +1,137 @@
+import { minimatch } from 'minimatch'
+import { spawn } from 'node:child_process'
+import { existsSync, statSync } from 'node:fs'
+import { copyFile, mkdir, mkdtemp, readdir, rm } from 'node:fs/promises'
+import { basename, join, resolve } from 'node:path'
+import { isDynamicPattern } from 'tinyglobby'
+
+
+export interface CopyDirOptions {
+  rename?: Record<string, string>;
+  ignore?: ((name: string, isDir: boolean, parent: string) => boolean)[];
+}
+
+export interface TempDir {
+  path: string;
+  name: string;
+  remove: () => Promise<void>;
+}
+
+
+/** 目录置空，支持忽略 */
+export const emptyDir = async (dir: string, ignore: string[] = []): Promise<boolean> => {
+  if (!existsSync(dir)) {
+    return false
+  }
+  for (const file of await readdir(dir)) {
+    if (ignore.includes(file)) {
+      continue
+    }
+    await rm(resolve(dir, file), { recursive: true, force: true })
+  }
+  return true
+}
+
+/** 目录是否为空，支持忽略 */
+export const isDirEmpty = async (path: string, ignore: string[] = []): Promise<boolean> => {
+  const files = await readdir(path)
+  const filtered = files.filter(f => !ignore.includes(f))
+  return filtered.length === 0
+}
+
+/** 获取子目录，支持忽略 */
+export const listSubDirs = async (source: string, ignore: string[] = []): Promise<string[]> => {
+  const res = await readdir(source, { withFileTypes: true })
+  return res
+    .filter(k => k.isDirectory() && !ignore.includes(k.name))
+    .map(dir => dir.name)
+}
+
+/** 复制目录，支持规则 */
+export const copyDir = async (
+  src: string,
+  dest: string,
+  options?: CopyDirOptions,
+): Promise<void> => {
+  await mkdir(dest, { recursive: true })
+  const entries = await readdir(src, { withFileTypes: true })
+  
+  for (const entry of entries) {
+    const name = entry.name
+    const isDir = entry.isDirectory()
+    
+    const { rename = {}, ignore = [] } = options ?? {}
+    const relName = rename[name] ?? name
+    if (ignore.some(rule => rule(name, isDir, src))) {
+      continue
+    }
+    
+    const from = join(src, name)
+    const to = join(dest, relName)
+    if (isDir) {
+      await copyDir(from, to, options)
+    } else {
+      await copyFile(from, to)
+    }
+  }
+}
+
+/** 是否是目录 */
+export const isDirSync = (path: string): boolean => {
+  return existsSync(path) && statSync(path).isDirectory()
+}
+
+/** 在指定目录下创建临时目录 */
+export const createTempDir = async (parent: string): Promise<TempDir> => {
+  await mkdir(parent, { recursive: true })
+  
+  const path = await mkdtemp(join(parent, 'temp-'))
+  const name = basename(path)
+  const remove = () => rm(path, { recursive: true })
+  
+  return { path, name, remove }
+}
+
+/** 创建字符串匹配函数，支持正则、Glob 模式和精确匹配 */
+export const createMatcher = (pattern: string | RegExp): (name: string) => boolean => {
+  if (pattern instanceof RegExp) {
+    return (name: string) => {
+      pattern.lastIndex = 0
+      return pattern.test(name)
+    }
+  }
+  
+  if (isDynamicPattern(pattern)) {
+    return (name: string) => minimatch(name, pattern)
+  }
+  
+  return (name: string) => name === pattern
+}
+
+/** 打开文件夹 */
+export const openDir = (dir: string): void => {
+  let cmd: string
+  let args: string[]
+  
+  switch (process.platform) {
+    case 'win32':
+      cmd = 'cmd'
+      args = [ '/c', 'start', '', dir ]
+      break
+    
+    case 'darwin':
+      cmd = 'open'
+      args = [ dir ]
+      break
+    
+    case 'linux':
+      cmd = 'xdg-open'
+      args = [ dir ]
+      break
+    
+    default:
+      throw new Error(`Unsupported platform: ${ process.platform }`)
+  }
+  
+  spawn(cmd, args, { detached: true, stdio: 'ignore' }).unref()
+}

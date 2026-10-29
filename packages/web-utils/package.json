@@ -1,0 +1,54 @@
+{
+  "name": "@peiyanlu/web-utils",
+  "version": "0.0.4",
+  "description": "Web utility toolkit providing common browser-side helpers and Web API utilities.",
+  "license": "MIT",
+  "type": "module",
+  "private": false,
+  "exports": "./src/index.ts",
+  "scripts": {
+    "dev": "tsdown -w",
+    "build": "tsdown",
+    "prepublishOnly": "tsdown",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@peiyanlu/ts-utils": "workspace:^"
+  },
+  "author": {
+    "name": "YanluPei",
+    "email": "peiyanlu@vip.qq.com"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "typescript",
+    "lib",
+    "web"
+  ],
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "./package.json": "./package.json"
+    },
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peiyanlu/utils.git",
+    "directory": "packages/web-utils"
+  },
+  "bugs": {
+    "url": "https://github.com/peiyanlu/utils/issues"
+  },
+  "homepage": "https://github.com/peiyanlu/utils#readme"
+}

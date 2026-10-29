@@ -1,0 +1,42 @@
+{
+  "name": "utils",
+  "version": "0.0.0",
+  "description": "A TypeScript monorepo for reusable libraries and developer utilities.",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "dev": "pnpm -r --stream dev",
+    "build": "pnpm -r --stream build",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage",
+    "clean": "npx --yes rimraf -g node_modules packages/**/{node_modules,dist,coverage}",
+    "release": "release"
+  },
+  "devDependencies": {
+    "@peiyanlu/release": "^2.1.2",
+    "@types/node": "^24.13.3",
+    "@vitest/coverage-v8": "^5.0.5",
+    "jsdom": "^29.1.1",
+    "publint": "^0.3.25",
+    "tsdown": "^0.23.4",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  },
+  "author": {
+    "name": "YanluPei",
+    "email": "peiyanlu@vip.qq.com"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peiyanlu/utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/peiyanlu/utils/issues"
+  },
+  "homepage": "https://github.com/peiyanlu/utils#readme"
+}

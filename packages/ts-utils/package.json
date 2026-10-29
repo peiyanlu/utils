@@ -1,0 +1,57 @@
+{
+  "name": "@peiyanlu/ts-utils",
+  "version": "0.0.12",
+  "description": "A lightweight TypeScript utility library with powerful type helpers and runtime tools.",
+  "license": "MIT",
+  "type": "module",
+  "private": false,
+  "exports": "./src/index.ts",
+  "scripts": {
+    "dev": "tsdown -w",
+    "build": "tsdown",
+    "prepublishOnly": "tsdown",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage"
+  },
+  "author": {
+    "name": "YanluPei",
+    "email": "peiyanlu@vip.qq.com"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "typescript",
+    "utils",
+    "types"
+  ],
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "import": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        },
+        "require": {
+          "types": "./dist/index.d.cts",
+          "default": "./dist/index.cjs"
+        }
+      },
+      "./package.json": "./package.json"
+    },
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peiyanlu/utils.git",
+    "directory": "packages/ts-utils"
+  },
+  "bugs": {
+    "url": "https://github.com/peiyanlu/utils/issues"
+  },
+  "homepage": "https://github.com/peiyanlu/utils#readme"
+}
