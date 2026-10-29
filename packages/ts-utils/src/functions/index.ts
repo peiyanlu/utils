@@ -21,3 +21,5 @@ export * from './url.js'
 export * from './color.js'
 
 export * from './error.js'
+
+export * from './iterable.js'

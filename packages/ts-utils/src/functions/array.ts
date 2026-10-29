@@ -39,6 +39,7 @@ export const replaceEvery = <T, V = T>(arr: readonly T[], step: number, val: V):
   return arr.map((v, i) => (i + 1) % step === 0 ? val : v)
 }
 
+/** 按条件拆分数组 */
 export const partition = <T>(arr: readonly T[], predicate: (item: T) => boolean): [ T[], T[] ] => {
   const matched: T[] = []
   const unmatched: T[] = []
@@ -53,3 +54,9 @@ export const partition = <T>(arr: readonly T[], predicate: (item: T) => boolean)
   
   return [ matched, unmatched ]
 }
+
+/** 条件为真时返回给定的值 */
+export const when = <T>(condition: unknown, ...values: T[]): T[] => condition ? [ ...values ] : []
+
+/** 条件为假时返回给定的值 */
+export const unless = <T>(condition: unknown, ...values: T[]): T[] => condition ? [] : [ ...values ]

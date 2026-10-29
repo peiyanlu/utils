@@ -12,6 +12,7 @@ import {
   isEmptyObject,
   isEmptySet,
   isEmptyString,
+  isFalse,
   isFinite,
   isFunction,
   isIndex,
@@ -35,6 +36,7 @@ import {
   isString,
   isSymbol,
   isSyncFunction,
+  isTrue,
   isUndefined,
   isZero,
 } from '../../src/index.js'
@@ -298,5 +300,17 @@ describe('value', () => {
     expect(isNotEmpty(new Set())).toBe(false)
     expect(isNotEmpty(new Map())).toBe(false)
     expect(isNotEmpty(new Foo())).toBe(true)
+  })
+  
+  it('isTrue', () => {
+    expect(isTrue(true)).toBe(true)
+    expect(isTrue('true')).toBe(false)
+    expect(isTrue(1)).toBe(false)
+  })
+  
+  it('isFalse', () => {
+    expect(isFalse(false)).toBe(true)
+    expect(isFalse('false')).toBe(false)
+    expect(isFalse(0)).toBe(false)
   })
 })

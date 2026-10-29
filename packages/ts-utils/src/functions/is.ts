@@ -54,7 +54,7 @@ export const isSymbol = (v: unknown): v is symbol => 'symbol' === typeof v
 
 /** 判断一个值是否为原始类型 */
 export const isPrimitive = (v: unknown): v is Primitive =>
-  v === null || ('object' !== typeof v && 'function' !== typeof v)
+  null === v || ('object' !== typeof v && 'function' !== typeof v)
 
 /** 判断一个值是否为数组 */
 export const isArray = (v: unknown): v is unknown[] => Array.isArray(v)
@@ -97,10 +97,10 @@ export const isNonNullable = (v: unknown): v is {} => null !== v && undefined !=
 export const isNullable = (v: unknown): v is null | undefined => null === v || undefined === v
 
 /** 0 值判断 */
-export const isZero = (v: number): v is 0 => 0 === v
+export const isZero = (v: unknown): v is 0 => 0 === v
 
 /** 数组索引值判断 */
-export const isIndex = (v: number): boolean => isInteger(v) && -1 < v
+export const isIndex = (v: unknown): boolean => isInteger(v) && -1 < v
 
 /** 判断对象是否为空对象（无自身属性） */
 export const isEmptyObject = (v: unknown): boolean => isPlainObject(v) && isZero(Reflect.ownKeys(v).length)
@@ -120,9 +120,15 @@ export const isEmptyMap = (v: unknown): boolean => isMap(v) && isZero(v.size)
 /** 判断 Set 是否为空 */
 export const isEmptySet = (v: unknown): boolean => isSet(v) && isZero(v.size)
 
-/** 断值是不是空 */
+/** 判断值是不是空 */
 export const isEmpty = (v: unknown): boolean =>
   isNullable(v) || isEmptyObject(v) || isEmptyArray(v) || isEmptyString(v) || isEmptyMap(v) || isEmptySet(v)
 
-/** 断值是不是非空 */
+/** 判断值是不是非空 */
 export const isNotEmpty = (v: unknown): boolean => !isEmpty(v)
+
+/** 判断值是不是 true */
+export const isTrue = (v: unknown): boolean => true === v
+
+/** 判断值是不是 false */
+export const isFalse = (v: unknown): boolean => false === v

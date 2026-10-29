@@ -15,6 +15,12 @@ export const splitLines = (text: string): string[] => text.split(/\r?\n/)
 /** 按行拆分（过滤空行） */
 export const splitNonEmptyLines = (text: string): string[] => splitLines(text).filter(Boolean)
 
+/** 按一个或多个空白字符拆分；空字符串得到空数组 */
+export const splitByWhitespace = (text: string): string[] => text.trim() ? text.trim().split(/\s+/u) : []
+
+/** 用一个空格拼接字符串 */
+export const joinWithSpace = (parts: string[]): string => parts.join(space())
+
 /** 折叠连续空白行 */
 export const collapseBlankLines = (str: string, opts: { threshold?: number; preserve?: number } = {}): string => {
   const { threshold = 3, preserve = 3 } = opts
@@ -30,8 +36,8 @@ export const collapseBlankLines = (str: string, opts: { threshold?: number; pres
 export const newline = (n = 1): string => '\n'.repeat(Math.abs(n))
 
 /** 消除缩进 */
-export const dedent = (str: string): string => {
-  const lines = str.split('\n')
+export const dedent = (str: string, format?: (line: string) => string): string => {
+  const lines = str.split(/\r?\n/)
   
   const indent = lines
     .filter(line => line.trim())
@@ -45,7 +51,7 @@ export const dedent = (str: string): string => {
   }
   
   return lines
-    .map(line => line.slice(indent))
+    .map(line => format ? format(line) : line.slice(indent))
     .join('\n')
     .trim()
 }

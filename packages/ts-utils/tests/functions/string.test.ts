@@ -2,8 +2,10 @@ import { describe, expect, it } from 'vitest'
 import {
   collapseBlankLines,
   dedent,
+  joinWithSpace,
   newline,
   space,
+  splitByWhitespace,
   splitLines,
   splitNonEmptyLines,
   trimTemplate,
@@ -16,6 +18,7 @@ it('upperFirst', () => {
   expect(upperFirst('test1')).toBe('Test1')
   expect(upperFirst('test2')).toBe('Test2')
   expect(upperFirst('')).toBe('')
+  expect(upperFirst(' ')).toBe(' ')
 })
 
 it('space', () => {
@@ -41,6 +44,22 @@ it('splitLines', () => {
 it('splitNonEmptyLines', () => {
   expect(splitNonEmptyLines('a\nb\r\nc')).toEqual([ 'a', 'b', 'c' ])
   expect(splitNonEmptyLines('a\n\nb\r\nc\n')).toEqual([ 'a', 'b', 'c' ])
+})
+
+it('splitByWhitespace', () => {
+  expect(splitByWhitespace('alpha   beta\tgamma')).toEqual([ 'alpha', 'beta', 'gamma' ])
+  expect(splitByWhitespace('  alpha \r\nbeta\ngamma  ')).toEqual([ 'alpha', 'beta', 'gamma' ])
+  expect(splitByWhitespace('alpha\n\nbeta\tgamma\n\n')).toEqual([ 'alpha', 'beta', 'gamma' ])
+  
+  expect(splitByWhitespace('')).toEqual([])
+  expect(splitByWhitespace('\n')).toEqual([])
+})
+
+it('joinWithSpace', () => {
+  expect(joinWithSpace([ 'alpha', 'beta' ])).toBe('alpha beta')
+  expect(joinWithSpace([ 'alpha', 'beta', '' ])).toBe('alpha beta ')
+  
+  expect(joinWithSpace([])).toBe('')
 })
 
 it('collapseBlankLines', () => {
@@ -71,10 +90,9 @@ describe('dedent', () => {
         world
       !
     `
-    const output = `hello
-  world
-!`
-    expect(dedent(input)).toBe(output)
+    
+    expect(dedent(input)).toBe('hello\n  world\n!')
+    expect(dedent(input, l => l.trimStart())).toBe('hello\nworld\n!')
   })
   
   it('should keep relative indentation', () => {
@@ -83,10 +101,9 @@ describe('dedent', () => {
         bar
           baz
     `
-    const output = `foo
-  bar
-    baz`
-    expect(dedent(input)).toBe(output)
+    
+    expect(dedent(input)).toBe('foo\n  bar\n    baz')
+    expect(dedent(input, l => l.trimStart())).toBe('foo\nbar\nbaz')
   })
   
   it('should trim empty lines', () => {
@@ -106,7 +123,16 @@ describe('dedent', () => {
     expect(dedent(' \n\n ')).toBe('')
   })
   
-  it('should ', () => {
-    expect(dedent('aaaaaaa')).toBe('aaaaaaa')
+  it('should support custom format function', () => {
+    const infer = [ 1, 2, 3 ].join('\n')
+    const text = `
+      hello
+      
+      ${ infer }
+      
+      world!
+    `
+    
+    expect(dedent(text, l => l.trimStart())).toBe('hello\n\n1\n2\n3\n\nworld!')
   })
 })
