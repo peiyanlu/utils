@@ -1,5 +1,12 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { createCanvasContext, getCanvasFont, getDomOffset, getTextWidth, lazyLoadImg } from '../src/misc.js'
+import {
+  createCanvasContext,
+  formatFileSize,
+  getCanvasFont,
+  getDomOffset,
+  getTextWidth,
+  lazyLoadImg,
+} from '../src/misc.js'
 
 
 describe('lazyLoadImg', () => {
@@ -202,3 +209,15 @@ describe('ctx', () => {
     expect(ctx.font).toBe('normal normal 20px Arial')
   })
 })
+
+it('formatFileSize', () => {
+  expect(formatFileSize(-1024)).toBe('0B')
+  expect(formatFileSize(10240)).toBe('10KB')
+  expect(formatFileSize(Math.pow(1024, 0))).toBe('1B')
+  expect(formatFileSize(Math.pow(1024, 1))).toBe('1KB')
+  expect(formatFileSize(Math.pow(1024, 2))).toBe('1MB')
+  expect(formatFileSize(Math.pow(1024, 3))).toBe('1GB')
+  expect(formatFileSize(Math.pow(1024, 4))).toBe('1TB')
+  expect(formatFileSize(Math.pow(1024, 8))).toBe('1YB')
+  expect(formatFileSize(Math.pow(1024, 9))).toBe('1024YB')
+}) 

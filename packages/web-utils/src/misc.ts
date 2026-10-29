@@ -56,3 +56,19 @@ export const getTextWidth = (text: string, refer?: HTMLElement, ctx?: CanvasRend
   ctx.font = getCanvasFont(refer)
   return ctx.measureText(text).width
 }
+
+/** 文件大小格式化 */
+export const formatFileSize = (size: number): string => {
+  if (size <= 0) return '0B'
+  
+  const units = [ 'B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB' ]
+  const k = 1024
+  
+  const i = Math.floor(Math.log(size) / Math.log(k))
+  const t = Math.max(0, Math.min(units.length - 1, i))
+  
+  const v = size / Math.pow(k, t)
+  const r = Math.round((v + Number.EPSILON) * 100) / 100
+  
+  return `${ r }${ units[t] }`
+}

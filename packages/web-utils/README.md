@@ -15,19 +15,11 @@ Web utility toolkit providing common browser-side helpers and Web API utilities.
 ## Installation
 
 ```shell
-# npm
-npm add @peiyanlu/web-utils
-
-# yarn
-yarn add @peiyanlu/web-utils
-
-# pnpm
 pnpm add @peiyanlu/web-utils
 ```
 
 ## Usage
 
 ```ts
-import {} from '@peiyanlu/web-utils'
-import type {} from '@peiyanlu/web-utils'
+import { isBrowser, downloadUrl, downloadBlob, readText, copyBlob, blobToUint8, getQueryParam } from '@peiyanlu/web-utils'
 ```
