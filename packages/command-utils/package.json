@@ -1,0 +1,58 @@
+{
+  "name": "@peiyanlu/command-utils",
+  "version": "0.0.1",
+  "description": "Utilities for running external commands in Node.js with consistent sync and async APIs, output handling, and error reporting.",
+  "license": "MIT",
+  "type": "module",
+  "private": false,
+  "exports": "./src/index.ts",
+  "scripts": {
+    "dev": "tsdown -w",
+    "build": "tsdown",
+    "prepublishOnly": "tsdown",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@peiyanlu/ts-utils": "workspace:^",
+    "@peiyanlu/node-utils": "workspace:^"
+  },
+  "devDependencies": {
+    "@peiyanlu/test-tools": "workspace:^"
+  },
+  "author": {
+    "name": "YanluPei",
+    "email": "peiyanlu@vip.qq.com"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "typescript",
+    "utils",
+    "command"
+  ],
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "./package.json": "./package.json"
+    },
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peiyanlu/utils.git",
+    "directory": "packages/command-utils"
+  },
+  "bugs": {
+    "url": "https://github.com/peiyanlu/utils/issues"
+  },
+  "homepage": "https://github.com/peiyanlu/utils#readme"
+}
