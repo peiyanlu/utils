@@ -1,7 +1,7 @@
 # @peiyanlu/cli-utils
 
 
-[![module](https://img.shields.io/badge/package-ESM--CJS-FFE536.svg?logo=npm)](https://nodejs.org/api/esm.html)
+[![module](https://img.shields.io/badge/package-ESM--only-FFE536.svg?logo=npm)](https://nodejs.org/api/esm.html)
 [![npm](https://img.shields.io/npm/v/@peiyanlu/cli-utils.svg)](https://npmjs.com/package/@peiyanlu/cli-utils)
 [![license](https://img.shields.io/npm/l/@peiyanlu/cli-utils.svg)](https://npmjs.com/package/@peiyanlu/cli-utils)
 [![downloads](https://img.shields.io/npm/dm/@peiyanlu/cli-utils.svg)](https://npmjs.com/package/@peiyanlu/cli-utils)
