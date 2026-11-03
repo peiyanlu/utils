@@ -223,6 +223,22 @@ importers:
         specifier: workspace:^
         version: link:../test-tools
 
+  packages/git-utils:
+    dependencies:
+      '@peiyanlu/command-utils':
+        specifier: workspace:^
+        version: link:../command-utils
+      '@peiyanlu/node-utils':
+        specifier: workspace:^
+        version: link:../node-utils
+      '@peiyanlu/ts-utils':
+        specifier: workspace:^
+        version: link:../ts-utils
+    devDependencies:
+      '@peiyanlu/test-tools':
+        specifier: workspace:^
+        version: link:../test-tools
+
   packages/node-utils:
     dependencies:
       '@peiyanlu/ts-utils':
