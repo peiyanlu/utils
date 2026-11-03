@@ -1,7 +1,7 @@
 # @peiyanlu/ts-utils
 
 
-[![module](https://img.shields.io/badge/package-ESM--CJS-FFE536.svg?logo=npm)](https://nodejs.org/api/esm.html)
+[![module](https://img.shields.io/badge/package-ESM--only-FFE536.svg?logo=npm)](https://nodejs.org/api/esm.html)
 [![npm](https://img.shields.io/npm/v/@peiyanlu/ts-utils.svg)](https://npmjs.com/package/@peiyanlu/ts-utils)
 [![license](https://img.shields.io/npm/l/@peiyanlu/ts-utils.svg)](https://npmjs.com/package/@peiyanlu/ts-utils)
 [![downloads](https://img.shields.io/npm/dm/@peiyanlu/ts-utils.svg)](https://npmjs.com/package/@peiyanlu/ts-utils)
