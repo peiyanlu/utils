@@ -2,7 +2,7 @@ import { existsSync } from 'fs'
 import { rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
-import { createTempDir, createTempWorkspace, createTempDirectory } from '../src/index.js'
+import { createTempWorkspace, createTempDirectory } from '../src/index.js'
 
 
 describe('createTempWorkspace', () => {
@@ -58,14 +58,6 @@ it('createTempDirectory should create dir', () => {
   const dir = createTempDirectory()
   
   expect(dir).toMatch(/temp-/)
-  expect(existsSync(dir)).toBe(true)
-  
-  rmSync(dir, { recursive: true })
-})
-
-it('createTempDir should create dir', () => {
-  const dir = createTempDir()
-  
   expect(existsSync(dir)).toBe(true)
   
   rmSync(dir, { recursive: true })

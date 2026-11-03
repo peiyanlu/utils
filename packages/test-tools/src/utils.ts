@@ -33,23 +33,3 @@ export const createTempWorkspace = (parent: string = TEST_TEMP_DIR): TempWorkspa
   
   return { path, name, remove, empty }
 }
-
-
-/** @deprecated Use TEST_TEMP_DIR_NAME instead. */
-export const TEST_TMP_DIR_NAME: string = TEST_TEMP_DIR_NAME
-
-/** @deprecated Use TEST_TEMP_DIR instead. */
-export const TEST_TMP_DIR: string = TEST_TEMP_DIR
-
-
-/** @deprecated Use TEST_TEMP_DIR_NAME instead. */
-export const ROOT_DIR: string = TEST_TEMP_DIR_NAME
-
-/** @deprecated Use TEST_TEMP_DIR instead. */
-export const TEST_TMP_ROOT: string = TEST_TEMP_DIR
-
-/** @deprecated Use createTempDirectory instead. */
-export const createTempDir = (parent: string = TEST_TEMP_DIR): string => {
-  mkdirSync(parent, { recursive: true })
-  return mkdtempSync(join(parent, 'temp-'))
-}
