@@ -1,6 +1,6 @@
 /** 解析 Github 链接获取 owner 和 repo */
 export const parseGitHubRepo = (url: string): string[] => {
-  const reg = /github(?:\.com)?[:/](.+?)\/(.+?)(?:[#/?].+?)?(?:\.git)?$/
+  const reg = /github(?:\.com)?[:/]([^/]+?)\/([^/]+?)(?:[#/?](?:.+?)?)?(?:\.git)?$/
   const match = url.trim().match(reg)
   return match ? match.slice(1, 3) : []
 }

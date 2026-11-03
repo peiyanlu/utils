@@ -4,15 +4,6 @@ export enum PkgManager {
   PNPM = 'pnpm',
 }
 
-/**
- * @deprecated Use `ConfirmResult` instead.
- */
-export enum YesOrNo {
-  Yes = 'yes',
-  No = 'no',
-  Ignore = 'ignore',
-}
-
 export enum ConfirmResult {
   YES = 'yes',
   NO = 'no',

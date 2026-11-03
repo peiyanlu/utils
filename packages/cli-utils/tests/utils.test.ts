@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { eol, isTestFile, parseArgs, splitLines, stringifyArgs, trimTemplate } from '../src/index.js'
+import { eol, isTestFile } from '../src/index.js'
 
 
 describe('isTestFile', () => {
@@ -98,25 +98,5 @@ describe('isTestFile', () => {
 describe('string helpers', () => {
   it('eol repeats OS line endings', () => {
     expect(eol(2)).toBe(eol() + eol())
-  })
-  
-  it('parseArgs splits by spaces after trimming', () => {
-    expect(parseArgs('  a b  c  ')).toEqual([ 'a', 'b', '', 'c' ])
-    expect(parseArgs('   ')).toEqual([])
-  })
-  
-  it('stringifyArgs joins args with spaces', () => {
-    expect(stringifyArgs([ 'a', 'b' ])).toBe('a b')
-    expect(stringifyArgs([])).toBe('')
-  })
-  
-  it('trimTemplate removes leading and trailing blank lines', () => {
-    expect(trimTemplate(`
-      hello
-    `)).toBe('      hello')
-  })
-  
-  it('splitLines supports lf and crlf and removes empty lines', () => {
-    expect(splitLines('a\n\nb\r\nc\n')).toEqual([ 'a', 'b', 'c' ])
   })
 })

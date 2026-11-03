@@ -1,5 +1,5 @@
+import { readJsonFileSync } from '@peiyanlu/node-utils'
 import { resolve } from 'node:path'
-import { readJsonFile } from './file-dir.js'
 
 
 export interface PackageJson {
@@ -43,7 +43,7 @@ export const toValidProjectName = (name: string): string => name
 export const getPackageInfo = (pkgName: string, getPkgDir: (pkg: string) => string): PackageContext => {
   const pkgDir = resolve(getPkgDir(pkgName))
   const pkgPath = resolve(pkgDir, 'package.json')
-  const pkg = readJsonFile(pkgPath) as PackageJson
+  const pkg = readJsonFileSync(pkgPath) as PackageJson
   
   return { pkg, pkgDir, pkgPath }
 }

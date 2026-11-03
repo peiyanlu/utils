@@ -1,7 +1,8 @@
+import { runNpm } from '@peiyanlu/command-utils'
+import { readJsonFile } from '@peiyanlu/node-utils'
+import { isString } from '@peiyanlu/ts-utils'
 import { join } from 'node:path'
 import { lt } from 'semver'
-import { readJsonFile } from './file-dir.js'
-import { runNpm } from './shell.js'
 import { parseVersion } from './version.js'
 
 
@@ -31,7 +32,7 @@ export const tagArg = (tag: string = DEFAULT_TAG): string[] => {
 export const getRegistry = async (pkgDir: string): Promise<string> => {
   const n = (r: string) => r.endsWith('/') ? r : `${ r }/`
   
-  const { publishConfig = {} } = readJsonFile(join(pkgDir, 'package.json'))
+  const { publishConfig = {} } = await readJsonFile(join(pkgDir, 'package.json'))
   const { registry } = publishConfig
   if (registry) return n(registry)
   
@@ -48,7 +49,7 @@ export const getRegistry = async (pkgDir: string): Promise<string> => {
  * @defaults scoped: restricted; unscoped: public
  */
 export const getAccess = async (pkgDir: string): Promise<'restricted' | 'public'> => {
-  const { name, publishConfig = {} } = readJsonFile(join(pkgDir, 'package.json'))
+  const { name, publishConfig = {} } = await readJsonFile(join(pkgDir, 'package.json'))
   const { access } = publishConfig
   return access || (name.startsWith('@') ? 'restricted' : 'public')
 }
@@ -60,7 +61,7 @@ export const getAccess = async (pkgDir: string): Promise<'restricted' | 'public'
  * @defaults npm ping --registry https://registry.npmjs.org/
  */
 export const pingRegistry = async (registry?: string): Promise<boolean> => {
-  return (undefined !== await runNpm([ 'ping', ...registryArg(registry) ]))
+  return isString(await runNpm([ 'ping', ...registryArg(registry) ], { error: 'throw' }))
 }
 
 /**
@@ -85,7 +86,7 @@ export const getAuthenticatedUser = (registry?: string): Promise<string | undefi
 export const hasWriteAccess = async (pkg: string, user: string, registry?: string): Promise<boolean> => {
   const res = await runNpm([ 'access', 'list', 'collaborators', pkg, '--json', ...registryArg(registry) ])
   
-  const collaborators: Record<string, string> = JSON.parse(res ?? '{}')
+  const collaborators: Record<string, string> = JSON.parse(res || '{}')
   const permissions: string | undefined = collaborators[user]
   
   return (permissions ?? '').includes('read-write')
@@ -163,9 +164,9 @@ export const publishPackage = (options?: {
 
 /** 解析发布的 dist-tag */
 export const resolvePublishTag = async (pkgName: string, version: string): Promise<string> => {
-  const { isPrerelease, preId } = parseVersion(version)
+  const { isPrerelease, preId = 'next' } = parseVersion(version)
   
-  if (isPrerelease) return preId || 'next'
+  if (isPrerelease) return preId
   
   const active = await getPublishedVersion(pkgName)
   if (!active) return 'latest'

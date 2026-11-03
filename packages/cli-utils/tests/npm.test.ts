@@ -1,15 +1,15 @@
+import { runNpm } from '@peiyanlu/command-utils'
+import { readJsonFile } from '@peiyanlu/node-utils'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { readJsonFile } from '../src/file-dir.js'
 import * as npm from '../src/npm.js'
 import { getPackageUrl } from '../src/npm.js'
-import { runNpm } from '../src/shell.js'
 
 
-vi.mock('../src/shell.js', () => ({
+vi.mock('@peiyanlu/command-utils', () => ({
   runNpm: vi.fn(),
 }))
 
-vi.mock('../src/file-dir.js', () => ({
+vi.mock('@peiyanlu/node-utils', () => ({
   readJsonFile: vi.fn(),
 }))
 
@@ -98,7 +98,7 @@ describe('getRegistry', () => {
   
   it('should fallback to default registry', async () => {
     mockReadJsonFile.mockReturnValue({} as any)
-    mockRunNpm.mockResolvedValue(undefined)
+    mockRunNpm.mockResolvedValue('')
     
     expect(await npm.getRegistry('.'))
       .toBe('https://registry.npmjs.org/')
@@ -139,17 +139,15 @@ describe('getAccess', () => {
 
 describe('pingRegistry', () => {
   it('should return true', async () => {
-    mockRunNpm.mockResolvedValue('pong')
+    mockRunNpm.mockResolvedValue('ping')
     
-    expect(await npm.pingRegistry())
-      .toBe(true)
+    expect(await npm.pingRegistry()).toBe(true)
   })
   
-  it('should return false', async () => {
-    mockRunNpm.mockResolvedValue(undefined)
+  it('should reject when ping fails', async () => {
+    mockRunNpm.mockRejectedValue(new Error('Ping error'))
     
-    expect(await npm.pingRegistry())
-      .toBe(false)
+    await expect(npm.pingRegistry()).rejects.toThrow('Ping error')
   })
 })
 
@@ -188,7 +186,7 @@ describe('hasWriteAccess', () => {
   })
   
   it('should return false when user not collaborator', async () => {
-    mockRunNpm.mockResolvedValue(undefined)
+    mockRunNpm.mockResolvedValue('')
     
     expect(await npm.hasWriteAccess('foo', 'alice'))
       .toBe(false)
@@ -227,7 +225,7 @@ describe('getDistTags', () => {
   })
   
   it('should return empty array', async () => {
-    mockRunNpm.mockResolvedValue(undefined)
+    mockRunNpm.mockResolvedValue('')
     
     expect(await npm.getDistTags('foo'))
       .toEqual([])
@@ -337,7 +335,7 @@ describe('resolvePublishTag', () => {
   })
   
   it('should return latest when package is not published', async () => {
-    mockRunNpm.mockResolvedValue(undefined)
+    mockRunNpm.mockResolvedValue('')
     
     expect(await npm.resolvePublishTag(
       'foo',

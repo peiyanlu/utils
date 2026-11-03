@@ -193,6 +193,12 @@ importers:
 
   packages/cli-utils:
     dependencies:
+      '@peiyanlu/command-utils':
+        specifier: workspace:^
+        version: link:../command-utils
+      '@peiyanlu/node-utils':
+        specifier: workspace:^
+        version: link:../node-utils
       '@peiyanlu/ts-utils':
         specifier: workspace:^
         version: link:../ts-utils
