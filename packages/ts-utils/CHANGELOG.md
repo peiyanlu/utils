@@ -1,3 +1,18 @@
+## 1.0.0 (2026-11-05)
+
+### ⚠ BREAKING CHANGES
+
+* ESM-only ([db1c5de](https://github.com/peiyanlu/utils/commit/db1c5def3abd97b056d65518c2c62327e6bfdb1e))
+  * 移除 CommonJS 构建和 `require` 导出
+
+### ✨ 新功能
+
+* 新增异步迭代、数组、字符串和类型判断工具 ([c974f07](https://github.com/peiyanlu/utils/commit/c974f073d172782e69892519a03484f4c4abefa2))
+
+### 🏗️ 构建系统
+
+* ESM-only ([db1c5de](https://github.com/peiyanlu/utils/commit/db1c5def3abd97b056d65518c2c62327e6bfdb1e))
+
 ## <small>[0.0.12](https://github.com/peiyanlu/ts-utils/compare/v0.0.11...v0.0.12) (2026-08-04)</small>
 
 ### ✨ 新功能

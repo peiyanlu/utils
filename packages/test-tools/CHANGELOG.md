@@ -1,3 +1,16 @@
+## 1.0.0 (2026-11-05)
+
+### ⚠ BREAKING CHANGES
+
+* 移除废弃的临时目录 API ([c2f1a4e](https://github.com/peiyanlu/utils/commit/c2f1a4ec6000dd0a380e86262377f9272b0b5e46))
+  - `ROOT_DIR`、`TEST_TMP_DIR_NAME` → `TEST_TEMP_DIR_NAME`
+  - `TEST_TMP_ROOT`、`TEST_TMP_DIR` → `TEST_TEMP_DIR`
+  - `createTempDir` → `createTempDirectory`
+
+### ♻️ 代码重构
+
+* 移除废弃的临时目录 API ([c2f1a4e](https://github.com/peiyanlu/utils/commit/c2f1a4ec6000dd0a380e86262377f9272b0b5e46))
+
 ## <small>[0.0.7](https://github.com/peiyanlu/test-tools/compare/v0.0.6...v0.0.7) (2026-08-04)</small>
 
 ### ✨ 新功能

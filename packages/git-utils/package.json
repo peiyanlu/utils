@@ -1,6 +1,6 @@
 {
   "name": "@peiyanlu/git-utils",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A Node.js and TypeScript library for common Git commands and workflows.",
   "license": "MIT",
   "type": "module",

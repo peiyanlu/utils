@@ -1,6 +1,6 @@
 {
   "name": "@peiyanlu/test-tools",
-  "version": "0.0.7",
+  "version": "1.0.0",
   "description": "Lightweight Node.js testing toolkit for isolated filesystem, Git, and setup lifecycle management.",
   "license": "MIT",
   "type": "module",

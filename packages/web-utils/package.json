@@ -1,6 +1,6 @@
 {
   "name": "@peiyanlu/web-utils",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Web utility toolkit providing common browser-side helpers and Web API utilities.",
   "license": "MIT",
   "type": "module",

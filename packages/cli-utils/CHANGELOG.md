@@ -1,3 +1,31 @@
+## 1.0.0 (2026-11-05)
+
+### ⚠ BREAKING CHANGES
+
+* 将文件、命令和 Git API 迁至独立包 ([46a5946](https://github.com/peiyanlu/utils/commit/46a59468153bfcd3b3d7c8ad26fc8b83b3aa3723))
+  - API 迁移：
+    - 文件操作 → `@peiyanlu/node-utils`
+    - 命令执行 → `@peiyanlu/command-utils`
+    - Git 操作 → `@peiyanlu/git-utils`
+  - API 替换：
+    - `YesOrNo` → `ConfirmResult`
+    - 从 `@peiyanlu/ts-utils` 导入：
+      - `parseArgs` → `splitByWhitespace`
+      - `stringifyArgs` → `joinWithSpace`
+      - `splitLines` → `splitNonEmptyLines`
+      - `trimTemplate`
+  - 最低 Node.js 版本提升至 22
+* ESM-only ([b1b21b2](https://github.com/peiyanlu/utils/commit/b1b21b29853a65f9b4127444a0537b022e996b76))
+  * 移除 CommonJS 构建和 `require` 导出
+
+### ♻️ 代码重构
+
+* 将文件、命令和 Git API 迁至独立包 ([46a5946](https://github.com/peiyanlu/utils/commit/46a59468153bfcd3b3d7c8ad26fc8b83b3aa3723))
+
+### 🏗️ 构建系统
+
+* ESM-only ([b1b21b2](https://github.com/peiyanlu/utils/commit/b1b21b29853a65f9b4127444a0537b022e996b76))
+
 ## <small>[0.0.15](https://github.com/peiyanlu/cli-utils/compare/0.0.14...0.0.15) (2026-08-04)</small>
 
 ### 🐛 Bug 修复

@@ -1,6 +1,6 @@
 {
   "name": "@peiyanlu/ts-utils",
-  "version": "0.0.12",
+  "version": "1.0.0",
   "description": "A lightweight TypeScript utility library with powerful type helpers and runtime tools.",
   "license": "MIT",
   "type": "module",

@@ -1,3 +1,9 @@
+## 0.1.0 (2026-11-05)
+
+### ✨ 新功能
+
+* 新增文件大小格式化方法 ([1136cce](https://github.com/peiyanlu/utils/commit/1136cce2f369677d7385cda51801877b2aba0805))
+
 ## <small>[0.0.4](https://github.com/peiyanlu/web-utils/compare/v0.0.3...v0.0.4) (2026-07-29)</small>
 
 ### ✨ 新功能

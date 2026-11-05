@@ -1,6 +1,6 @@
 {
   "name": "@peiyanlu/cli-utils",
-  "version": "0.0.15",
+  "version": "1.0.0",
   "description": "Shared utils for building interactive Node.js CLI applications.",
   "license": "MIT",
   "type": "module",

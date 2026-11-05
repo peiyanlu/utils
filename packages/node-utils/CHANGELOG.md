@@ -1,3 +1,9 @@
+## 0.1.0 (2026-11-05)
+
+### ✨ 新功能
+
+* 新增流处理与文本文件读写工具 ([c7b376d](https://github.com/peiyanlu/utils/commit/c7b376d554113388d9fa900840463361b94765b7))
+
 ## <small>[0.0.4](https://github.com/peiyanlu/node-utils/compare/v0.0.3...v0.0.4) (2026-08-07)</small>
 
 ### ✨ 新功能

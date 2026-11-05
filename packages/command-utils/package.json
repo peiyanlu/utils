@@ -1,6 +1,6 @@
 {
   "name": "@peiyanlu/command-utils",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Utilities for running external commands in Node.js with consistent sync and async APIs, output handling, and error reporting.",
   "license": "MIT",
   "type": "module",
