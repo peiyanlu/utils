@@ -1,3 +1,9 @@
+## <small>[0.1.1](https://github.com/peiyanlu/utils/compare/node-utils%400.1.0...node-utils%400.1.1) (2026-11-05)</small>
+
+### 🐛 Bug 修复
+
+* 修复模块导出缺失 ([ec78a4e](https://github.com/peiyanlu/utils/commit/ec78a4e740a3b17792d344f422ff80ea6e931e7f))
+
 ## 0.1.0 (2026-11-05)
 
 ### ✨ 新功能
