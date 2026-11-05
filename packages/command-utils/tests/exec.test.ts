@@ -21,7 +21,7 @@ describe('execAsync', () => {
   })
   
   it('executes command with args overload', async () => {
-    await expect(execAsync('node', nodePrint('console.log("456")'), { trimEnd: true })).resolves.toBe('456')
+    await expect(execAsync('node', nodePrint(`"console.log('456')"`), { trimEnd: true })).resolves.toBe('456')
   })
   
   it('returns empty string on command failure', async () => {
@@ -56,7 +56,7 @@ describe('execSyncRe', () => {
   })
   
   it('executes command with args overload', () => {
-    expect(execSyncRe('node', nodePrint('console.log("456")'), { trimEnd: true })).toBe('456')
+    expect(execSyncRe('node', nodePrint(`"console.log('456')"`), { trimEnd: true })).toBe('456')
   })
   
   it('returns empty string on command failure', () => {
