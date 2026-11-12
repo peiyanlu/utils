@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { eventOnly, HoldExecutor, keyboardOnly, mouseOnly, pointerOnly } from '../../src/mouse/HoldExecutor.js'
+import { eventOnly, HoldExecutor, keyboardOnly, mouseOnly, pointerOnly } from '../../src/mouse/HoldExecutor.ts'
 
 
 beforeEach(() => {

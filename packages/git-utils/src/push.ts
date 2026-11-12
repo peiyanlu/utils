@@ -1,5 +1,5 @@
-import { hasUpstream } from './misc.js'
-import { gitPush } from './raw.js'
+import { hasUpstream } from './misc.ts'
+import { gitPush } from './raw.ts'
 
 
 /**

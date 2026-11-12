@@ -1,5 +1,5 @@
 import { expect, it, vi } from 'vitest'
-import { sleep } from '../../src/index.js'
+import { sleep } from '../../src/index.ts'
 
 
 it('sleep', async () => {

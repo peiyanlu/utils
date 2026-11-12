@@ -8,7 +8,7 @@ import {
   fileToUint8,
   textToFile,
   uint8ToFile,
-} from '../../src/binary/file.js'
+} from '../../src/binary/file.ts'
 
 
 describe('fileToArrayBuffer', () => {

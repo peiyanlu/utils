@@ -1,29 +1,29 @@
-export * from './add.js'
+export * from './add.ts'
 
-export * from './branch.js'
+export * from './branch.ts'
 
-export * from './checkout.js'
+export * from './checkout.ts'
 
-export * from './commit.js'
+export * from './commit.ts'
 
-export * from './config.js'
+export * from './config.ts'
 
-export * from './push.js'
+export * from './push.ts'
 
-export * from './remote.js'
+export * from './remote.ts'
 
-export * from './tag.js'
+export * from './tag.ts'
 
-export * from './undo.revert.js'
+export * from './undo.revert.ts'
 
-export * from './misc.js'
+export * from './misc.ts'
 
-export * from './undo.reset.js'
+export * from './undo.reset.ts'
 
-export * from './undo.restore.js'
+export * from './undo.restore.ts'
 
-export * from './undo.unstaged.js'
+export * from './undo.unstaged.ts'
 
-export * from './undo.discard.js'
+export * from './undo.discard.ts'
 
-export * from './raw.js'
+export * from './raw.ts'

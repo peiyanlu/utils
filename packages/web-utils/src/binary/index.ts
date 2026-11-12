@@ -1,3 +1,3 @@
-export * from './file.js'
+export * from './file.ts'
 
-export * from './blob.js'
+export * from './blob.ts'

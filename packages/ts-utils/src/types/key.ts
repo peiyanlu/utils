@@ -1,4 +1,4 @@
-import type { AnyFunction, AsyncFunction } from './function.js'
+import type { AnyFunction, AsyncFunction } from './function.ts'
 
 
 /** 提取指定类型 T 的 keys */

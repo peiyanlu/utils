@@ -18,7 +18,7 @@ import {
   gitTagLightweight,
   gitTagSigned,
   gitTagSync,
-} from '../src/index.js'
+} from '../src/index.ts'
 
 
 const configureTestSigning = onceAsync(async (TEMP_DIR: string) => {

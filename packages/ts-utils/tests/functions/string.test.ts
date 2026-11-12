@@ -10,7 +10,7 @@ import {
   splitNonEmptyLines,
   trimTemplate,
   upperFirst,
-} from '../../src/index.js'
+} from '../../src/index.ts'
 
 
 it('upperFirst', () => {

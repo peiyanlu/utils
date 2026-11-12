@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { assert, getCallStack, throwError } from '../../src/index.js'
+import { assert, getCallStack, throwError } from '../../src/index.ts'
 
 
 describe('throwError', () => {

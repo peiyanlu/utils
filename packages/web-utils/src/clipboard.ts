@@ -1,4 +1,4 @@
-import { getFilesFromEntry } from './fs-entry.js'
+import { getFilesFromEntry } from './fs-entry.ts'
 
 
 /** 复制文本 */

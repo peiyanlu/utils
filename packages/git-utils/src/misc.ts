@@ -1,7 +1,7 @@
 import { runGit } from '@peiyanlu/command-utils'
 import { splitNonEmptyLines } from '@peiyanlu/ts-utils'
-import { gitFetch, gitInit, gitLog, gitRevList, gitRevParse, gitStatus, gitSymbolicRef, gitUpdateRef } from './raw.js'
-import { getLatestTag, getPreviousTag } from './tag.js'
+import { gitFetch, gitInit, gitLog, gitRevList, gitRevParse, gitStatus, gitSymbolicRef, gitUpdateRef } from './raw.ts'
+import { getLatestTag, getPreviousTag } from './tag.ts'
 
 
 /** 初始化裸仓库，模拟远程仓库 */

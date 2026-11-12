@@ -1,6 +1,6 @@
 import { Tool, useToolWithManager } from '@peiyanlu/test-tools'
 import { afterAll, expect, it } from 'vitest'
-import { gzipFile } from '../src/gzip.js'
+import { gzipFile } from '../src/gzip.ts'
 
 
 const { manager, tool } = useToolWithManager(

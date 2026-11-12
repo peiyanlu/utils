@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest'
-import { arrayEquals, equals, notEquals } from '../../src/index.js'
+import { arrayEquals, equals, notEquals } from '../../src/index.ts'
 
 
 it('equals ', () => {

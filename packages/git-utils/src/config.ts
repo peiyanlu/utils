@@ -1,4 +1,4 @@
-import { gitConfig } from './raw.js'
+import { gitConfig } from './raw.ts'
 
 
 /**

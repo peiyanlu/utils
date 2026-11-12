@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { joinUrl } from '../src/index.js'
+import { joinUrl } from '../src/index.ts'
 
 
 describe('joinUrl', () => {

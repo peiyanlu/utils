@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { alpha, channel, hex, hexa, rgb, rgba } from '../../src/index.js'
+import { alpha, channel, hex, hexa, rgb, rgba } from '../../src/index.ts'
 
 
 const hexColorRegex = /^#[0-9a-f]{6}$/i

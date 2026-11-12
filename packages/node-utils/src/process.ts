@@ -1,7 +1,7 @@
 import { isNull } from '@peiyanlu/ts-utils'
 import type { ChildProcess } from 'node:child_process'
 import type { Readable } from 'node:stream'
-import { concatBufferStream, concatStringStream, decodeUtf8 } from './stream.js'
+import { concatBufferStream, concatStringStream, decodeUtf8 } from './stream.ts'
 
 
 export const exitCode = async (process: ChildProcess): Promise<number | null> => {

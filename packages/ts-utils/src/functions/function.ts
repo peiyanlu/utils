@@ -1,5 +1,5 @@
-import type { AnyFunction, MaybePromise, Promisified } from '../types/index.js'
-import { isFunction } from './is.js'
+import type { AnyFunction, MaybePromise, Promisified } from '../types/index.ts'
+import { isFunction } from './is.ts'
 
 
 /** 仅执行一次的方法 */

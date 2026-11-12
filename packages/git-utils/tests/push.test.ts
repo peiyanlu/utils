@@ -3,7 +3,7 @@ import { GitTool, useToolWithManager } from '@peiyanlu/test-tools'
 import { rmSync } from 'node:fs'
 import { join } from 'node:path'
 import { afterAll, describe, expect, it } from 'vitest'
-import { gitPush, gitPushBranch, gitPushDeleteRef, gitPushTag, gitTag } from '../src/index.js'
+import { gitPush, gitPushBranch, gitPushDeleteRef, gitPushTag, gitTag } from '../src/index.ts'
 
 
 const { manager, tool, tempDir: TEMP_DIR } = useToolWithManager(

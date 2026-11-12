@@ -1,7 +1,7 @@
 import { type Class, isNewable } from '@peiyanlu/ts-utils'
-import { type Context, type SetupFn, SetupManager } from './manager.js'
-import { Tool } from './tools/index.js'
-import { createTempWorkspace } from './utils.js'
+import { type Context, type SetupFn, SetupManager } from './manager.ts'
+import { Tool } from './tools/index.ts'
+import { createTempWorkspace } from './utils.ts'
 
 
 type ToolFactory<T extends Tool> = Class<T> | ((tempDir: string, env: NodeJS.ProcessEnv) => T)

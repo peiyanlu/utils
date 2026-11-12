@@ -1,4 +1,4 @@
-import type { AnyFunction, AsyncFunction } from './function.js'
+import type { AnyFunction, AsyncFunction } from './function.ts'
 
 
 /** 所有函数成员 */

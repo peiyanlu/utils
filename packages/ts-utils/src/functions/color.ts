@@ -1,4 +1,4 @@
-import { isBetween, randomInt } from './number.js'
+import { isBetween, randomInt } from './number.ts'
 
 
 export namespace channel {

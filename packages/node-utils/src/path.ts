@@ -1,5 +1,5 @@
 import { dirname, extname, posix, relative, resolve, sep } from 'node:path'
-import { isWin } from './platform.js'
+import { isWin } from './platform.ts'
 
 
 /** 路径归一化 */

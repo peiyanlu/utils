@@ -6,7 +6,7 @@ import {
   getDomOffset,
   getTextWidth,
   lazyLoadImg,
-} from '../src/misc.js'
+} from '../src/misc.ts'
 
 
 describe('lazyLoadImg', () => {

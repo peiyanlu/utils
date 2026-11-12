@@ -1,5 +1,5 @@
-export * from './HoldExecutor.js'
+export * from './HoldExecutor.ts'
 
-export * from './InactivityTimer.js'
+export * from './InactivityTimer.ts'
 
-export * from './drag-delta.js'
+export * from './drag-delta.ts'

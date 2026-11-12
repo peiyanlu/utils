@@ -1,12 +1,12 @@
 import { expect, it, vi } from 'vitest'
-import * as fsEntry from '../src/fs-entry.js'
+import * as fsEntry from '../src/fs-entry.ts'
 import {
   getDirectoryEntries,
   getFileFromFileEntry,
   getFilesFromEntry,
   isDirectoryEntry,
   isFileEntry,
-} from '../src/fs-entry.js'
+} from '../src/fs-entry.ts'
 
 
 it('isFileEntry', () => {

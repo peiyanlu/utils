@@ -1,5 +1,5 @@
 import { expect, it, vi } from 'vitest'
-import { downloadBlob, downloadJson, downloadSvg, downloadText, downloadUrl } from '../src/download.js'
+import { downloadBlob, downloadJson, downloadSvg, downloadText, downloadUrl } from '../src/download.ts'
 
 
 it('downloadUrl should create link and click', () => {

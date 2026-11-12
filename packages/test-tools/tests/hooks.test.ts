@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { Tool, useTool, useToolWithManager } from '../src/index.js'
+import { Tool, useTool, useToolWithManager } from '../src/index.ts'
 
 
 describe('useTool', () => {

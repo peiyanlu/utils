@@ -1,6 +1,6 @@
-import type { AbstractClass, AnyFunction, AsyncFunction, Class, Primitive } from '../types/index.js'
-import { isSuccessSync } from './function.js'
-import { getTag } from './object.js'
+import type { AbstractClass, AnyFunction, AsyncFunction, Class, Primitive } from '../types/index.ts'
+import { isSuccessSync } from './function.ts'
+import { getTag } from './object.ts'
 
 
 /** 判断一个值是否为 Object（非 null） */

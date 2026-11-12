@@ -1,4 +1,4 @@
-import { gitCommit } from './raw.js'
+import { gitCommit } from './raw.ts'
 
 
 /**

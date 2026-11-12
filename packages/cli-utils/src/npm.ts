@@ -3,7 +3,7 @@ import { readJsonFile } from '@peiyanlu/node-utils'
 import { isString } from '@peiyanlu/ts-utils'
 import { join } from 'node:path'
 import { lt } from 'semver'
-import { parseVersion } from './version.js'
+import { parseVersion } from './version.ts'
 
 
 export const DEFAULT_TAG: string = 'latest'

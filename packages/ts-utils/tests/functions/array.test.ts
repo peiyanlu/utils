@@ -9,7 +9,7 @@ import {
   replaceEvery,
   unless,
   when,
-} from '../../src/index.js'
+} from '../../src/index.ts'
 
 
 it('castArray', () => {

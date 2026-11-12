@@ -1,5 +1,5 @@
 import { splitNonEmptyLines } from '@peiyanlu/ts-utils'
-import { gitBranch } from './raw.js'
+import { gitBranch } from './raw.ts'
 
 
 /**

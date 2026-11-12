@@ -1,1 +1,1 @@
-export * from './mime.js'
+export * from './mime.ts'

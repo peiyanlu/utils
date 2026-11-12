@@ -1,4 +1,4 @@
-import { gitCheckout } from './raw.js'
+import { gitCheckout } from './raw.ts'
 
 
 /**

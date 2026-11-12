@@ -1,5 +1,5 @@
-export * from './types/index.js'
+export * from './types/index.ts'
 
-export * from './functions/index.js'
+export * from './functions/index.ts'
 
-export * from './constants/index.js'
+export * from './constants/index.ts'

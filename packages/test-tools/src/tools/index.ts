@@ -1,3 +1,3 @@
-export * from './base.js'
+export * from './base.ts'
 
-export * from './git.js'
+export * from './git.ts'

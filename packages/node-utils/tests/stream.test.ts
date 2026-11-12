@@ -7,7 +7,7 @@ import {
   mergeReadable,
   parseJsonStream,
   splitStream,
-} from '../src/stream.js'
+} from '../src/stream.ts'
 
 
 const collect = async <T>(iterable: AsyncIterable<T>): Promise<T[]> => {

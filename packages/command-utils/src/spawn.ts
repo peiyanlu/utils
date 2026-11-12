@@ -1,8 +1,8 @@
 import { joinWithSpace, once } from '@peiyanlu/ts-utils'
 import { spawn, spawnSync } from 'node:child_process'
-import { handleError } from './handle.js'
-import { command } from './command.js'
-import type { CommandOutput, SpawnAsyncOpts, SpawnSyncOpts } from './types.js'
+import { handleError } from './handle.ts'
+import { command } from './command.ts'
+import type { CommandOutput, SpawnAsyncOpts, SpawnSyncOpts } from './types.ts'
 
 
 /** 异步执行 `spawn` 获取字符串类型的结果 */

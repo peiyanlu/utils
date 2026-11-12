@@ -2,7 +2,7 @@ import { command } from '@peiyanlu/command-utils'
 import { GitTool, useToolWithManager } from '@peiyanlu/test-tools'
 import { join } from 'node:path'
 import { afterAll, describe, expect, it } from 'vitest'
-import { gitConfig, gitConfigGet, gitConfigList, gitConfigSet, gitConfigSync, gitConfigUnset } from '../src/index.js'
+import { gitConfig, gitConfigGet, gitConfigList, gitConfigSet, gitConfigSync, gitConfigUnset } from '../src/index.ts'
 
 
 const { manager, tool, tempDir } = useToolWithManager(

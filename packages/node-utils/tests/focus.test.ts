@@ -1,6 +1,6 @@
 import { spawn } from 'node:child_process'
 import { expect, it, vi } from 'vitest'
-import { openDir, revealFile } from '../src/focus.js'
+import { openDir, revealFile } from '../src/focus.ts'
 
 
 vi.mock('node:child_process', () => ({

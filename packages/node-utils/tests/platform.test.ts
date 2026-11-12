@@ -1,5 +1,5 @@
 import { expect, it, vi } from 'vitest'
-import { isPlatform } from '../src/platform.js'
+import { isPlatform } from '../src/platform.ts'
 
 
 it('isPlatform', () => {
@@ -23,7 +23,7 @@ it('isWin', async () => {
   
   vi.resetModules()
   
-  const { isWin } = await import('../src/platform.js')
+  const { isWin } = await import('../src/platform.ts')
   
   expect(isWin).toBe(true)
 })
@@ -34,7 +34,7 @@ it('isMac', async () => {
   
   vi.resetModules()
   
-  const { isMac } = await import('../src/platform.js')
+  const { isMac } = await import('../src/platform.ts')
   
   expect(isMac).toBe(true)
 })
@@ -45,7 +45,7 @@ it('isLinux', async () => {
   
   vi.resetModules()
   
-  const { isLinux } = await import('../src/platform.js')
+  const { isLinux } = await import('../src/platform.ts')
   
   expect(isLinux).toBe(true)
 })

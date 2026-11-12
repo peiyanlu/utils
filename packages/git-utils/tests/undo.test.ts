@@ -1,7 +1,7 @@
 import { command } from '@peiyanlu/command-utils'
 import { GitTool, useToolWithManager } from '@peiyanlu/test-tools'
 import { afterAll, expect, it } from 'vitest'
-import { gitReset, gitResetSync, gitRestore, gitRestoreSync } from '../src/index.js'
+import { gitReset, gitResetSync, gitRestore, gitRestoreSync } from '../src/index.ts'
 
 
 const { manager, tool, tempDir: TEMP_DIR } = useToolWithManager(

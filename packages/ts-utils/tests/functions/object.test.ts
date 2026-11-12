@@ -16,7 +16,7 @@ import {
   toString,
   typedEntries,
   unset,
-} from '../../src/index.js'
+} from '../../src/index.ts'
 
 
 class Foo {}

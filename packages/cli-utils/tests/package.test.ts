@@ -9,7 +9,7 @@ import {
   pkgFromUserAgent,
   toValidPackageName,
   toValidProjectName,
-} from '../src/index.js'
+} from '../src/index.ts'
 
 
 const { path: TEMP_DIR, remove } = createTempWorkspace()

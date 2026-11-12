@@ -10,7 +10,7 @@ import {
   setQueryParam,
   setQueryParamValues,
   toQueryString,
-} from '../src/url.js'
+} from '../src/url.ts'
 
 
 describe('toQueryString', () => {

@@ -1,7 +1,7 @@
 import { command } from '@peiyanlu/command-utils'
 import { GitTool, useToolWithManager } from '@peiyanlu/test-tools'
 import { afterAll, describe, expect, it } from 'vitest'
-import { gitAdd, gitAddAll, gitAddTracked } from '../src/index.js'
+import { gitAdd, gitAddAll, gitAddTracked } from '../src/index.ts'
 
 
 const { manager, tool, tempDir: TEMP_DIR } = useToolWithManager(

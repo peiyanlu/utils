@@ -1,5 +1,5 @@
 import { splitNonEmptyLines } from '@peiyanlu/ts-utils'
-import { gitForEachRef, gitLsRemote, gitTag, gitTagSync } from './raw.js'
+import { gitForEachRef, gitLsRemote, gitTag, gitTagSync } from './raw.ts'
 
 
 /**

@@ -1,7 +1,7 @@
 import { GitTool, useToolWithManager } from '@peiyanlu/test-tools'
 import { resolve } from 'node:path'
 import { afterAll, describe, expect, it } from 'vitest'
-import { createMatcher, scanFiles } from '../src/glob.js'
+import { createMatcher, scanFiles } from '../src/glob.ts'
 
 
 const { manager, tool } = useToolWithManager(

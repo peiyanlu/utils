@@ -1,4 +1,4 @@
-import { Tool } from './base.js'
+import { Tool } from './base.ts'
 
 
 export class GitTool extends Tool {

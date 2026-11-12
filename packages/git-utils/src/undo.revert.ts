@@ -1,4 +1,4 @@
-import { gitRevert } from './raw.js'
+import { gitRevert } from './raw.ts'
 
 
 /**

@@ -3,7 +3,7 @@ import { splitNonEmptyLines } from '@peiyanlu/ts-utils'
 import { mkdir, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { afterAll, afterEach, describe, expect, it, vi } from 'vitest'
-import { command, spawnAsync } from '../src/index.js'
+import { command, spawnAsync } from '../src/index.ts'
 
 
 const { path: TEMP_DIR, remove } = createTempWorkspace()

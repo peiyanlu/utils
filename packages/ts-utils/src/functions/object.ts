@@ -1,5 +1,5 @@
-import type { AbstractClass, Dict, Simplify, StringKeyOf } from '../types/index.js'
-import { isEmptyString, isInstanceOf, isNullable, isObject, isUndefined } from './is.js'
+import type { AbstractClass, Dict, Simplify, StringKeyOf } from '../types/index.ts'
+import { isEmptyString, isInstanceOf, isNullable, isObject, isUndefined } from './is.ts'
 
 
 /** 安全转换对象为特定类实例 */

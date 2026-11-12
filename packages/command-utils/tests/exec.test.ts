@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, expectTypeOf, it, vi } from 'vitest'
-import { execAsync, execSyncRe } from '../src/index.js'
+import { execAsync, execSyncRe } from '../src/index.ts'
 
 
 const nodePrint = (code: string) => [ '-e', code ]

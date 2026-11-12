@@ -1,25 +1,25 @@
-export * from './buffer.js'
+export * from './buffer.ts'
 
-export * from './dir.js'
+export * from './dir.ts'
 
-export * from './etag.js'
+export * from './etag.ts'
 
-export * from './file.js'
+export * from './file.ts'
 
-export * from './focus.js'
+export * from './focus.ts'
 
-export * from './glob.js'
+export * from './glob.ts'
 
-export * from './gzip.js'
+export * from './gzip.ts'
 
-export * from './hash.js'
+export * from './hash.ts'
 
-export * from './path.js'
+export * from './path.ts'
 
-export * from './platform.js'
+export * from './platform.ts'
 
-export * from './process.js'
+export * from './process.ts'
 
-export * from './stream.js'
+export * from './stream.ts'
 
-export * from './worker.js'
+export * from './worker.ts'

@@ -1,6 +1,6 @@
 import { Stats } from 'node:fs'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { createTempWorkspace, Tool } from '../src/index.js'
+import { createTempWorkspace, Tool } from '../src/index.ts'
 
 
 describe('Tool', () => {

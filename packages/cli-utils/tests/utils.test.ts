@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { eol, isTestFile } from '../src/index.js'
+import { eol, isTestFile } from '../src/index.ts'
 
 
 describe('isTestFile', () => {
@@ -39,8 +39,8 @@ describe('isTestFile', () => {
       expect(isTestFile('foo.unit-test.ts')).toBe(true)
     })
     
-    it('matches foo.e2e-spec.js', () => {
-      expect(isTestFile('foo.e2e-spec.js')).toBe(true)
+    it('matches foo.e2e-spec.ts', () => {
+      expect(isTestFile('foo.e2e-spec.ts')).toBe(true)
     })
     
     it('matches foo.test.mts', () => {

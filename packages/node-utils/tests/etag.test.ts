@@ -1,6 +1,6 @@
 import type { Stats } from 'node:fs'
 import { describe, expect, it } from 'vitest'
-import { createEtag, createWeakEtag, createWeakFileEtag } from '../src/etag.js'
+import { createEtag, createWeakEtag, createWeakFileEtag } from '../src/etag.ts'
 
 
 describe('createEtag', () => {

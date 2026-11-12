@@ -13,7 +13,7 @@ import {
   outputString,
   outputStringStream,
   throwProcessError,
-} from '../src/index.js'
+} from '../src/index.ts'
 
 
 const runNode = (code: string) => spawn(process.execPath, [ '-e', code ])

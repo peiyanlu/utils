@@ -1,5 +1,5 @@
-import type { AnyFunction } from './function.js'
-import type { Builtin } from './primitive.js'
+import type { AnyFunction } from './function.ts'
+import type { Builtin } from './primitive.ts'
 
 
 /** 简化包装类型 */

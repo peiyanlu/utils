@@ -1,15 +1,15 @@
-export * from './enums.js'
+export * from './enums.ts'
 
-export * from './types.js'
+export * from './types.ts'
 
-export * from './utils.js'
+export * from './utils.ts'
 
-export * from './join-url.js'
+export * from './join-url.ts'
 
-export * from './npm.js'
+export * from './npm.ts'
 
-export * from './version.js'
+export * from './version.ts'
 
-export * from './package.js'
+export * from './package.ts'
 
-export * from './github.js'
+export * from './github.ts'

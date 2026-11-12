@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest'
-import { arrayBufferToUint8, safeUint8, uint8ToArrayBuffer } from '../../src/index.js'
+import { arrayBufferToUint8, safeUint8, uint8ToArrayBuffer } from '../../src/index.ts'
 
 
 it('uint8ToArrayBuffer', () => {

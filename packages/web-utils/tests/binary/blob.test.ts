@@ -7,7 +7,7 @@ import {
   blobToUint8,
   textToBlob,
   uint8ToBlob,
-} from '../../src/binary/blob.js'
+} from '../../src/binary/blob.ts'
 
 
 describe('blobToArrayBuffer', () => {

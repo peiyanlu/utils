@@ -1,8 +1,8 @@
 import { joinWithSpace } from '@peiyanlu/ts-utils'
 import { exec, execSync } from 'node:child_process'
-import { handleError } from './handle.js'
-import { command } from './command.js'
-import type { ExecAsync, ExecAsyncOpts, ExecSync, ExecSyncOpts, CommandOutput } from './types.js'
+import { handleError } from './handle.ts'
+import { command } from './command.ts'
+import type { ExecAsync, ExecAsyncOpts, ExecSync, ExecSyncOpts, CommandOutput } from './types.ts'
 
 
 /** 异步执行 `exec` 获取字符串类型的结果 */

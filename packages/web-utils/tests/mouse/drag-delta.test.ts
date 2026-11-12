@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { mouseDragDelta, pointerDragDelta } from '../../src/mouse/drag-delta.js'
+import { mouseDragDelta, pointerDragDelta } from '../../src/mouse/drag-delta.ts'
 
 
 const testDrag = (

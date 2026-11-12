@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import * as raw from '../src/raw.js'
+import * as raw from '../src/raw.ts'
 
 
 const mocks = vi.hoisted(() => ({

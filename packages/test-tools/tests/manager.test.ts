@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { type Context, SetupManager } from '../src/index.js'
+import { type Context, SetupManager } from '../src/index.ts'
 
 
 interface TestContext extends Context {

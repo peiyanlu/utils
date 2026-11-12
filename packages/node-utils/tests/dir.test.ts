@@ -2,7 +2,7 @@ import { Tool, useToolWithManager } from '@peiyanlu/test-tools'
 import { readdir } from 'node:fs/promises'
 import { join } from 'node:path'
 import { afterAll, describe, expect, it } from 'vitest'
-import { copyDir, createTempDir, emptyDir, isDirEmpty, isDirSync, listSubDirs } from '../src/dir.js'
+import { copyDir, createTempDir, emptyDir, isDirEmpty, isDirSync, listSubDirs } from '../src/dir.ts'
 
 
 const { manager, tool, tempDir } = useToolWithManager(

@@ -1,9 +1,9 @@
-export type * from './function.js'
+export type * from './function.ts'
 
-export type * from './key.js'
+export type * from './key.ts'
 
-export type * from './object.js'
+export type * from './object.ts'
 
-export type * from './pick.js'
+export type * from './pick.ts'
 
-export type * from './primitive.js'
+export type * from './primitive.ts'

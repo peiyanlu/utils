@@ -1,6 +1,6 @@
 
 import { splitNonEmptyLines } from '@peiyanlu/ts-utils'
-import { gitRemote } from './raw.js'
+import { gitRemote } from './raw.ts'
 
 
 /**

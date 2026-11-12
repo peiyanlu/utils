@@ -1,8 +1,8 @@
 import { runNpm } from '@peiyanlu/command-utils'
 import { readJsonFile } from '@peiyanlu/node-utils'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import * as npm from '../src/npm.js'
-import { getPackageUrl } from '../src/npm.js'
+import * as npm from '../src/npm.ts'
+import { getPackageUrl } from '../src/npm.ts'
 
 
 vi.mock('@peiyanlu/command-utils', () => ({

@@ -1,6 +1,6 @@
 import { Tool, useToolWithManager } from '@peiyanlu/test-tools'
 import { afterAll, expect, it } from 'vitest'
-import { runWorker } from '../src/worker.js'
+import { runWorker } from '../src/worker.ts'
 
 
 const code = [
@@ -21,10 +21,10 @@ const { manager, tool } = useToolWithManager(
   Tool,
   [
     () => {
-      tool.writeFileSync('worker.js', code)
+      tool.writeFileSync('worker.ts', code)
     },
     () => {
-      tool.writeFileSync('worker.js', codeErr)
+      tool.writeFileSync('worker.ts', codeErr)
     },
   ],
   afterAll,
@@ -34,13 +34,13 @@ const { manager, tool } = useToolWithManager(
 it('runWorker use file with success', async () => {
   await manager.prepare(1)
   
-  expect(await runWorker(tool.resolve('worker.js'), { a: 1, b: 5 })).toBe(6)
+  expect(await runWorker(tool.resolve('worker.ts'), { a: 1, b: 5 })).toBe(6)
 })
 
 it('runWorker use file with exit', async () => {
   await manager.prepare(2)
   
-  await expect(() => runWorker(tool.resolve('worker.js'), { a: 1, b: 5 })).rejects.toThrow()
+  await expect(() => runWorker(tool.resolve('worker.ts'), { a: 1, b: 5 })).rejects.toThrow()
 })
 
 

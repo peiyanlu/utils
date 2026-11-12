@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from 'vitest'
-import { copyBlob, copyText, getPasteFiles, getPasteText, readText } from '../src/clipboard.js'
+import { copyBlob, copyText, getPasteFiles, getPasteText, readText } from '../src/clipboard.ts'
 
 
-vi.mock('../src/fs-entry.js', () => ({
+vi.mock('../src/fs-entry.ts', () => ({
   getFilesFromEntry: vi.fn(),
 }))
 
@@ -78,7 +78,7 @@ describe('getPasteFiles', () => {
     const entry1 = {} as FileSystemEntry
     const entry2 = {} as FileSystemEntry
     
-    const { getFilesFromEntry } = await import('../src/fs-entry.js')
+    const { getFilesFromEntry } = await import('../src/fs-entry.ts')
     
     vi.mocked(getFilesFromEntry)
       .mockResolvedValueOnce([ file1 ])
@@ -111,7 +111,7 @@ describe('getPasteFiles', () => {
     const file2 = new File([], '2.txt')
     const file3 = new File([], '3.txt')
     
-    const { getFilesFromEntry } = await import('../src/fs-entry.js')
+    const { getFilesFromEntry } = await import('../src/fs-entry.ts')
     
     vi.mocked(getFilesFromEntry)
       .mockResolvedValueOnce([ file1, file2 ])

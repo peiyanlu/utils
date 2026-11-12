@@ -1,9 +1,9 @@
-export * from './types.js'
+export * from './types.ts'
 
-export * from './spawn.js'
+export * from './spawn.ts'
 
-export * from './exec.js'
+export * from './exec.ts'
 
-export * from './command.js'
+export * from './command.ts'
 
-export * from './commands.js'
+export * from './commands.ts'

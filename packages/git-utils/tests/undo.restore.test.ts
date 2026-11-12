@@ -11,7 +11,7 @@ import {
   gitRestoreIndexFileFrom,
   gitRestoreWorktreeAllFrom,
   gitRestoreWorktreeFileFrom,
-} from '../src/index.js'
+} from '../src/index.ts'
 
 
 const { manager, tool, tempDir: TEMP_DIR } = useToolWithManager(

@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest'
-import { createRandom, isBetween, randomInt, round } from '../../src/index.js'
+import { createRandom, isBetween, randomInt, round } from '../../src/index.ts'
 
 
 it('createRandom', () => {

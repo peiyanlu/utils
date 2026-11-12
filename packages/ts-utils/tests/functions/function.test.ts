@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { isSuccess, isSuccessSync, once, onceAsync, promisify, tryCall, tryCallSync } from '../../src/index.js'
+import { isSuccess, isSuccessSync, once, onceAsync, promisify, tryCall, tryCallSync } from '../../src/index.ts'
 
 
 describe('once', () => {

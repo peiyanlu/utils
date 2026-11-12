@@ -1,4 +1,4 @@
-import { gitAdd } from './raw.js'
+import { gitAdd } from './raw.ts'
 
 
 /**

@@ -1,4 +1,4 @@
-import { gitRestore } from './raw.js'
+import { gitRestore } from './raw.ts'
 
 
 /**

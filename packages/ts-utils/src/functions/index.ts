@@ -1,25 +1,25 @@
-export * from './is.js'
+export * from './is.ts'
 
-export * from './number.js'
+export * from './number.ts'
 
-export * from './string.js'
+export * from './string.ts'
 
-export * from './object.js'
+export * from './object.ts'
 
-export * from './array.js'
+export * from './array.ts'
 
-export * from './binary.js'
+export * from './binary.ts'
 
-export * from './compare.js'
+export * from './compare.ts'
 
-export * from './function.js'
+export * from './function.ts'
 
-export * from './async.js'
+export * from './async.ts'
 
-export * from './url.js'
+export * from './url.ts'
 
-export * from './color.js'
+export * from './color.ts'
 
-export * from './error.js'
+export * from './error.ts'
 
-export * from './iterable.js'
+export * from './iterable.ts'

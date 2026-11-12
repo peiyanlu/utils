@@ -1,6 +1,6 @@
-import { execAsync, execSyncRe } from './exec.js'
-import { spawnAsync, spawnSyncRe } from './spawn.js'
-import type { ExecAsyncOpts, ExecSyncOpts, CommandOutput, SpawnAsyncOpts, SpawnSyncOpts } from './types.js'
+import { execAsync, execSyncRe } from './exec.ts'
+import { spawnAsync, spawnSyncRe } from './spawn.ts'
+import type { ExecAsyncOpts, ExecSyncOpts, CommandOutput, SpawnAsyncOpts, SpawnSyncOpts } from './types.ts'
 
 
 /** 基于 {@link spawnAsync} 实现 */

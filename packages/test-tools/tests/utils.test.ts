@@ -2,7 +2,7 @@ import { existsSync } from 'fs'
 import { rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
-import { createTempWorkspace, createTempDirectory } from '../src/index.js'
+import { createTempWorkspace, createTempDirectory } from '../src/index.ts'
 
 
 describe('createTempWorkspace', () => {

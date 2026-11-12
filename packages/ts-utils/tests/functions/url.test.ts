@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { isFileUrl, isHttpUrl, isInternalRoute, isLocalhost } from '../../src/index.js'
+import { isFileUrl, isHttpUrl, isInternalRoute, isLocalhost } from '../../src/index.ts'
 
 
 describe('isHttpUrl', () => {

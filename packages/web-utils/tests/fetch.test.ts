@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { fetchWithTimeout } from '../src/fetch.js'
+import { fetchWithTimeout } from '../src/fetch.ts'
 
 
 describe('fetchWithTimeout', () => {

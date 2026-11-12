@@ -9,7 +9,7 @@ import {
   readJsonFileSync,
   writeJsonFile,
   writeJsonFileSync,
-} from '../src/file.js'
+} from '../src/file.ts'
 
 
 vi.mock('node:child_process', () => ({

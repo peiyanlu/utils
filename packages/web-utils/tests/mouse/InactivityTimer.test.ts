@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, it, vi } from 'vitest'
-import { InactivityTimer } from '../../src/mouse/InactivityTimer.js'
+import { InactivityTimer } from '../../src/mouse/InactivityTimer.ts'
 
 
 beforeEach(() => {

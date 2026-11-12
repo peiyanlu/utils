@@ -1,5 +1,5 @@
 import { expect, it, vi } from 'vitest'
-import { isAndroid, isBrowser, isIOS, isMobile } from '../src/platform.js'
+import { isAndroid, isBrowser, isIOS, isMobile } from '../src/platform.ts'
 
 
 it('isBrowser should return true in browser environment', () => {

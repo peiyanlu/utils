@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { isSVGCode, serializeSVG } from '../src/label.js'
+import { isSVGCode, serializeSVG } from '../src/label.ts'
 
 
 describe('serializeSVG', () => {

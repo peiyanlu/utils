@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { createTempWorkspace, GitTool } from '../src/index.js'
+import { createTempWorkspace, GitTool } from '../src/index.ts'
 
 
 let tool: GitTool

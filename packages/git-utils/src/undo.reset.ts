@@ -1,4 +1,4 @@
-import { gitReset, gitResetSync } from './raw.js'
+import { gitReset, gitResetSync } from './raw.ts'
 
 
 export const headArg = (count = 1): string => {

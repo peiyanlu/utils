@@ -7,8 +7,8 @@ import {
   isSamePath,
   isSubPath,
   removeExtension,
-} from '../src/path.js'
-import { isWin } from '../src/platform.js'
+} from '../src/path.ts'
+import { isWin } from '../src/platform.ts'
 
 
 describe('normalizePath', () => {
@@ -18,7 +18,7 @@ describe('normalizePath', () => {
     
     vi.resetModules()
     
-    const { normalizePath } = await import('../src/path.js')
+    const { normalizePath } = await import('../src/path.ts')
     
     expect(normalizePath('C:\\foo\\bar\\..\\baz'))
       .toBe('C:/foo/baz')
@@ -30,7 +30,7 @@ describe('normalizePath', () => {
     
     vi.resetModules()
     
-    const { normalizePath } = await import('../src/path.js')
+    const { normalizePath } = await import('../src/path.ts')
     
     expect(normalizePath('foo\\bar\\baz'))
       .toBe('foo/bar/baz')
@@ -42,7 +42,7 @@ describe('normalizePath', () => {
     
     vi.resetModules()
     
-    const { normalizePath } = await import('../src/path.js')
+    const { normalizePath } = await import('../src/path.ts')
     
     expect(normalizePath('/foo/bar/../baz'))
       .toBe('/foo/baz')
@@ -54,7 +54,7 @@ describe('normalizePath', () => {
     
     vi.resetModules()
     
-    const { normalizePath } = await import('../src/path.js')
+    const { normalizePath } = await import('../src/path.ts')
     
     expect(normalizePath('foo/bar'))
       .toBe('foo/bar')

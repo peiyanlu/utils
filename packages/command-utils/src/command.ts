@@ -1,5 +1,5 @@
-import { Options } from './options.js'
-import type { CommandPublicOpts } from './types.js'
+import { Options } from './options.ts'
+import type { CommandPublicOpts } from './types.ts'
 
 
 /**

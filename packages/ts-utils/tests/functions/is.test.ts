@@ -39,7 +39,7 @@ import {
   isTrue,
   isUndefined,
   isZero,
-} from '../../src/index.js'
+} from '../../src/index.ts'
 
 
 class Foo {}

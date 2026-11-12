@@ -1,7 +1,7 @@
-export * from './tools/index.js'
+export * from './tools/index.ts'
 
-export * from './manager.js'
+export * from './manager.ts'
 
-export * from './utils.js'
+export * from './utils.ts'
 
-export * from './hooks.js'
+export * from './hooks.ts'

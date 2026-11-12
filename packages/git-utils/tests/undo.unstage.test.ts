@@ -1,7 +1,7 @@
 import { command } from '@peiyanlu/command-utils'
 import { GitTool, useToolWithManager } from '@peiyanlu/test-tools'
 import { afterAll, describe, expect, it } from 'vitest'
-import { gitUnstageAll, gitUnstageFile } from '../src/index.js'
+import { gitUnstageAll, gitUnstageFile } from '../src/index.ts'
 
 
 const { manager, tool, tempDir: TEMP_DIR } = useToolWithManager(

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { getGithubReleaseUrl, getGithubUrl, parseGitHubRepo } from '../src/index.js'
+import { getGithubReleaseUrl, getGithubUrl, parseGitHubRepo } from '../src/index.ts'
 
 
 describe('parseGitHubRepo', () => {
