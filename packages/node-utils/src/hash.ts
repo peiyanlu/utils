@@ -1,6 +1,8 @@
-import { type BinaryLike, createHash } from 'node:crypto'
+import { createHash } from 'node:crypto'
 import { createReadStream } from 'node:fs'
 
+
+export type BinaryLike = string | NodeJS.ArrayBufferView
 
 export type HashAlgorithm =
   | 'md5'

@@ -1,4 +1,4 @@
-import { dirname, extname, posix, relative, resolve, sep } from 'node:path'
+import { dirname, extname, isAbsolute, posix, relative, resolve, sep } from 'node:path'
 import { isWin } from './platform.ts'
 
 
@@ -30,13 +30,13 @@ export const isSamePath = (a: string, b: string): boolean => resolve(a) === reso
 /** 判断路径是否位于目录内（包含目录自身） */
 export const isInDir = (parent: string, child: string): boolean => {
   const rel = relative(resolve(parent), resolve(child))
-  return rel !== '..' && !rel.startsWith(`..${ sep }`)
+  return rel !== '..' && !rel.startsWith(`..${ sep }`) && !isAbsolute(rel)
 }
 
 /** 判断路径是否是目录的子路径 */
 export const isSubPath = (parent: string, child: string): boolean => {
   const rel = relative(resolve(parent), resolve(child))
-  return rel !== '' && rel !== '..' && !rel.startsWith(`..${ sep }`)
+  return rel !== '' && rel !== '..' && !rel.startsWith(`..${ sep }`) && !isAbsolute(rel)
 }
 
 /** 判断路径是否是目录的直接子路径 */

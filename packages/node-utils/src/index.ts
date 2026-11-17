@@ -23,3 +23,5 @@ export * from './process.ts'
 export * from './stream.ts'
 
 export * from './worker.ts'
+
+export * from './style-text.ts'

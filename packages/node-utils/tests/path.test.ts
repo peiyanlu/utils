@@ -115,6 +115,23 @@ describe('isInDir', () => {
   it('should not confuse similar directory names', () => {
     expect(isInDir('/tmp/test', '/tmp/test2/file.txt')).toBe(false)
   })
+  
+  it('should normalize dot segments', () => {
+    expect(isInDir('/tmp/test', '/tmp/test/./file.txt')).toBe(true)
+    expect(isInDir('/tmp/test', '/tmp/test/sub/../file.txt')).toBe(true)
+    expect(isInDir('/tmp/test', '/tmp/test/../outside')).toBe(false)
+  })
+  
+  it('should handle relative paths', () => {
+    expect(isInDir('tmp/test', 'tmp/test/file.txt')).toBe(true)
+    expect(isInDir('tmp/test', 'tmp/other/file.txt')).toBe(false)
+  })
+  
+  it('should handle different drive letters on Windows', () => {
+    if (!isWin) return
+    
+    expect(isInDir('C:\\tmp\\test', 'D:\\tmp\\test\\file.txt')).toBe(false)
+  })
 })
 
 describe('isSubPath', () => {
@@ -144,6 +161,23 @@ describe('isSubPath', () => {
   
   it('should not confuse similar directory names', () => {
     expect(isSubPath('/tmp/test', '/tmp/test2/file.txt')).toBe(false)
+  })
+  
+  it('should normalize dot segments', () => {
+    expect(isSubPath('/tmp/test', '/tmp/test/./file.txt')).toBe(true)
+    expect(isSubPath('/tmp/test', '/tmp/test/sub/../file.txt')).toBe(true)
+    expect(isSubPath('/tmp/test', '/tmp/test/../outside')).toBe(false)
+  })
+  
+  it('should handle relative paths', () => {
+    expect(isSubPath('tmp/test', 'tmp/test/file.txt')).toBe(true)
+    expect(isSubPath('tmp/test', 'tmp/other/file.txt')).toBe(false)
+  })
+  
+  it('should handle different drive letters on Windows', () => {
+    if (!isWin) return
+    
+    expect(isSubPath('C:\\tmp\\test', 'D:\\tmp\\test\\file.txt')).toBe(false)
   })
 })
 

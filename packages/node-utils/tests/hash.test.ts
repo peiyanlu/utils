@@ -1,7 +1,7 @@
 import { Tool, useToolWithManager } from '@peiyanlu/test-tools'
-import { type BinaryLike, createHash } from 'node:crypto'
+import { createHash } from 'node:crypto'
 import { afterAll, describe, expect, it } from 'vitest'
-import { hash, hashFile } from '../src/hash.ts'
+import { type BinaryLike, hash, hashFile } from '../src/hash.ts'
 
 
 const { manager, tool } = useToolWithManager(
