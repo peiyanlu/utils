@@ -1,7 +1,7 @@
 import { defineConfig, GithubHosting, PnpmWorkspacesProject } from '@peiyanlu/release'
 
 
-export default defineConfig({
+const config: ReturnType<typeof defineConfig> = defineConfig({
   project: new PnpmWorkspacesProject({
     mode: 'independent',
   }),
@@ -13,3 +13,5 @@ export default defineConfig({
     verbose: true,
   },
 })
+
+export default config
