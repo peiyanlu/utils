@@ -1,7 +1,7 @@
 import { newline, space } from '@peiyanlu/ts-utils'
 
 
-const formatError = (cmd: string, stderr: string) => {
+const formatError = (cmd: string, stderr: string): string => {
   const detail = stderr.trim()
   
   return [
@@ -16,7 +16,7 @@ const formatError = (cmd: string, stderr: string) => {
   ].join(newline())
 }
 
-export const handleError = (cmd: string, stderr: string, error?: string) => {
+export const handleError = (cmd: string, stderr: string, error?: string): string => {
   const message = formatError(cmd, stderr)
   
   switch (error) {
