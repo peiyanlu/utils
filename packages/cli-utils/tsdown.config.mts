@@ -3,7 +3,7 @@ import { defineConfig, type UserConfig } from 'tsdown'
 
 const config: UserConfig[] = defineConfig([
   {
-    entry: 'src/index.ts',
+    entry: [ 'src/index.ts', 'src/prompts.ts' ],
     format: [ 'esm' ],
     outDir: 'dist',
     platform: 'node',

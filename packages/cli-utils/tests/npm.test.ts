@@ -325,13 +325,13 @@ describe('resolvePublishTag', () => {
     )).toBe('beta')
   })
   
-  it('should return next when prerelease id is missing', async () => {
+  it('should return "" when prerelease id is missing', async () => {
     mockRunNpm.mockResolvedValue('1.0.0')
     
     expect(await npm.resolvePublishTag(
       'foo',
       '1.0.0-0',
-    )).toBe('next')
+    )).toBe('')
   })
   
   it('should return latest when package is not published', async () => {
