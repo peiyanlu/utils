@@ -36,7 +36,7 @@ export class Tool {
   readFileSync(file: string): Buffer<ArrayBuffer>
   readFileSync(file: string, encoding: BufferEncoding): string
   readFileSync(file: string, encoding?: BufferEncoding): string | Buffer<ArrayBuffer> {
-    return readFileSync(this.resolve(file), encoding)
+    return readFileSync(this.resolve(file), { encoding })
   }
   
   existsSync(target: string): boolean {

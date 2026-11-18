@@ -1,9 +1,9 @@
-import { assert, type Dict, type MaybePromise, once } from '@peiyanlu/ts-utils'
+import { assert, type Awaitable, type Dict, once } from '@peiyanlu/ts-utils'
 
 
 export type Context = Dict
-export type SetupFn<T extends Context> = (context: T) => MaybePromise<void>
-export type TeardownFn = () => MaybePromise<void>
+export type SetupFn<T extends Context> = (context: T) => Awaitable<void>
+export type TeardownFn = () => Awaitable<void>
 
 
 export class SetupManager<T extends Context> {
