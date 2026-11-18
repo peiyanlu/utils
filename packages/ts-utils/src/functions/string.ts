@@ -10,16 +10,20 @@ export const space = (n: number = 1): string => ' '.repeat(Math.abs(n))
 export const trimTemplate = (str: string): string => str.replace(/^\s*\n+|\n+\s*$/g, '')
 
 /** 按行拆分 */
-export const splitLines = (text: string): string[] => text.split(/\r?\n/)
+export const splitLines = (text: string, limit?: number): string[] => text.split(/\r?\n/, limit)
 
 /** 按行拆分（过滤空行） */
-export const splitNonEmptyLines = (text: string): string[] => splitLines(text).filter(Boolean)
+export const splitNonEmptyLines = (text: string, limit?: number): string[] => splitLines(text, limit).filter(Boolean)
 
 /** 按一个或多个空白字符拆分；空字符串得到空数组 */
-export const splitByWhitespace = (text: string): string[] => text.trim() ? text.trim().split(/\s+/u) : []
+export const splitByWhitespace = (text: string, limit?: number): string[] =>
+  text.trim() ? text.trim().split(/\s+/u, limit) : []
 
 /** 用一个空格拼接字符串 */
 export const joinWithSpace = (parts: string[]): string => parts.join(space())
+
+/** 用一个换行符拼接字符串 */
+export const joinWithLine = (parts: string[]): string => parts.join(newline())
 
 /** 折叠连续空白行 */
 export const collapseBlankLines = (str: string, opts: { threshold?: number; preserve?: number } = {}): string => {

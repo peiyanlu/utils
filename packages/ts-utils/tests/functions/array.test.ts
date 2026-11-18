@@ -1,4 +1,4 @@
-import { expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import {
   castArray,
   chunk,
@@ -7,6 +7,8 @@ import {
   nonUndefined,
   partition,
   replaceEvery,
+  unique,
+  uniqueBy,
   unless,
   when,
 } from '../../src/index.ts'
@@ -67,4 +69,41 @@ it('when', () => {
 it('unless', () => {
   expect(unless(false, 'a', 'b', 'c')).toStrictEqual([ 'a', 'b', 'c' ])
   expect(unless(true, 'a', 'b', 'c')).toStrictEqual([])
-}) 
+})
+
+it('unique', () => {
+  expect(unique([ 1, '1', true, null, undefined, 1, '1', true, null, undefined ]))
+    .toEqual([ 1, '1', true, null, undefined ])
+  expect(unique([ 1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 4, 5, 6 ]))
+    .toEqual([ 1, 2, 3, 4, 5, 6 ])
+})
+
+describe('uniqueBy', () => {
+  it('should remove duplicate elements by key', () => {
+    const array = [
+      { id: 1, name: 'Alice' },
+      { id: 2, name: 'Bob' },
+      { id: 1, name: 'Alice' }, // Duplicate by id
+      { id: 3, name: 'Charlie' },
+      { id: 2, name: 'Bob' }, // Duplicate by id
+    ]
+    const uniqueArray = uniqueBy(array, 'id')
+    expect(uniqueArray).toEqual([
+      { id: 1, name: 'Alice' },
+      { id: 2, name: 'Bob' },
+      { id: 3, name: 'Charlie' },
+    ])
+  })
+  
+  it('should handle empty array', () => {
+    const array: any[] = []
+    const uniqueArray = uniqueBy(array, 'id')
+    expect(uniqueArray).toEqual([])
+  })
+  
+  it('should handle array with one element', () => {
+    const array = [ { id: 1, name: 'Alice' } ]
+    const uniqueArray = uniqueBy(array, 'id')
+    expect(uniqueArray).toEqual(array)
+  })
+})

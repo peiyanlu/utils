@@ -247,3 +247,11 @@ export const get = <V>(object: Dict, path: string): V | undefined => {
 export const cloneInstance = <T>(inst: T): T => {
   return Object.assign(Object.create(Object.getPrototypeOf(inst)), inst)
 }
+
+/** 条件为真时返回给定的值 */
+export const whenObject = <T extends object>(condition: unknown, value: T): Partial<T> =>
+  condition ? { ...value } : {}
+
+/** 条件为假时返回给定的值 */
+export const unlessObject = <T extends object>(condition: unknown, value: T): Partial<T> =>
+  condition ? {} : { ...value }

@@ -1,4 +1,4 @@
-import type { AnyFunction, MaybePromise, Promisified } from '../types/index.ts'
+import type { AnyFunction, Awaitable, Promisified } from '../types/index.ts'
 import { isFunction } from './is.ts'
 
 
@@ -56,7 +56,7 @@ export const promisify = <T extends AnyFunction>(fn: T): Promisified<T> => {
 
 /** 安全调用函数，异常时返回 undefined */
 export const tryCall = async <T, F>(
-  fn: () => MaybePromise<T>,
+  fn: () => Awaitable<T>,
   fallback: F | ((error: unknown) => F),
 ): Promise<T | F> => {
   try {
@@ -83,7 +83,7 @@ export const tryCallSync = <T, F>(
 }
 
 /** 判断函数执行是否成功 */
-export const isSuccess = async (fn: () => MaybePromise<unknown>): Promise<boolean> => {
+export const isSuccess = async (fn: () => Awaitable<unknown>): Promise<boolean> => {
   try {
     await fn()
     return true

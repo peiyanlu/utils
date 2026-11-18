@@ -1,10 +1,10 @@
 /** 抛出错误 */
-export const throwError = (err: string | Error): never => {
+export const throwError: (err: string | Error) => never = (err: string | Error): never => {
   throw err instanceof Error ? err : new Error(err)
 }
 
 /** 断言 */
-export const assert = (value: unknown, message?: string | Error): asserts value => {
+export const assert: (value: unknown, message?: string | Error) => asserts value = (value: unknown, message?: string | Error): asserts value => {
   !value && throwError(message ?? 'Assertion failed')
 }
 

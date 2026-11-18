@@ -1,3 +1,6 @@
+import type { Primitive } from '../types/index.ts'
+
+
 /** 参数数组化 */
 export const castArray = <T>(v: T | readonly T[]): T[] => {
   return Array.isArray(v) ? [ ...v ] : [ v as T ]
@@ -60,3 +63,20 @@ export const when = <T>(condition: unknown, ...values: T[]): T[] => condition ? 
 
 /** 条件为假时返回给定的值 */
 export const unless = <T>(condition: unknown, ...values: T[]): T[] => condition ? [] : [ ...values ]
+
+/** 基本数据类型数组去重 */
+export const unique = <T = Primitive>(v: T[]): T[] => [ ...new Set([ ...v ]) ]
+
+/** 对象数组按字段去重 */
+export const uniqueBy = <T>(array: T[], key: keyof T): T[] =>
+  Array
+    .from(
+      array.reduce(
+          (map, item) => {
+            map.set(item[key], item)
+            return map
+          },
+          new Map(),
+        )
+        .values(),
+    )

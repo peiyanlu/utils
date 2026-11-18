@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import {
   collapseBlankLines,
   dedent,
+  joinWithLine,
   joinWithSpace,
   newline,
   space,
@@ -60,6 +61,13 @@ it('joinWithSpace', () => {
   expect(joinWithSpace([ 'alpha', 'beta', '' ])).toBe('alpha beta ')
   
   expect(joinWithSpace([])).toBe('')
+})
+
+it('joinWithLine', () => {
+  expect(joinWithLine([ 'alpha', 'beta' ])).toBe('alpha\nbeta')
+  expect(joinWithLine([ 'alpha', 'beta', '' ])).toBe('alpha\nbeta\n')
+  
+  expect(joinWithLine([])).toBe('')
 })
 
 it('collapseBlankLines', () => {

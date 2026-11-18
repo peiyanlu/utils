@@ -15,7 +15,9 @@ import {
   toRawString,
   toString,
   typedEntries,
+  unlessObject,
   unset,
+  whenObject,
 } from '../../src/index.ts'
 
 
@@ -261,4 +263,14 @@ describe('cloneInstance', () => {
     expect(cloneInstance(animal).run()).toBe('run')
     expect(cloneInstance(animal).walk()).toBe('walk')
   })
+})
+
+it('whenObject', () => {
+  expect(whenObject(true, { a: 1, b: 2 })).toEqual({ a: 1, b: 2 })
+  expect(whenObject(false, { a: 1, b: 2 })).toEqual({})
+})
+
+it('unlessObject', () => {
+  expect(unlessObject(false, { a: 1, b: 2 })).toEqual({ a: 1, b: 2 })
+  expect(unlessObject(true, { a: 1, b: 2 })).toEqual({})
 })
