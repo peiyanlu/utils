@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@peiyanlu/release':
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^2.2.1
+        version: 2.2.1
       '@types/node':
         specifier: ^26.6.6
         version: 26.6.6
@@ -185,18 +185,6 @@ packages:
     resolution: {integrity: sha512-tEj8X2No2A1c9NDnZECxiiJ8TP3vmFlN9tLlLeSaMqVW4tUmVG2R4qpv/eP4zymWxnymYLkLcIYVV0VcWj3RCQ==}
     engines: {node: '>= 20.12.0'}
 
-  '@conventional-changelog/git-client@3.1.2':
-    resolution: {integrity: sha512-jZqwnJwf7nboIlAcw/mkOjVa6DexCcUOgT2oOQgkoi3z9vR8tGFkcMy2BFcYwjhL9sYcDDXkRQDayiDieCoW7A==}
-    engines: {node: '>=22'}
-    peerDependencies:
-      conventional-commits-filter: ^6.0.1
-      conventional-commits-parser: ^7.1.2
-    peerDependenciesMeta:
-      conventional-commits-filter:
-        optional: true
-      conventional-commits-parser:
-        optional: true
-
   '@conventional-changelog/git-client@3.2.0':
     resolution: {integrity: sha512-sD/E0vzpkoDz/dqM1Hhv0ihC4KBw6RXjefeO8SG1XrX+wGkMxe1pKeedkKDPCtr2JjuhbuS9aJNgOvnT8hbeBw==}
     engines: {node: '>=22'}
@@ -367,8 +355,8 @@ packages:
     resolution: {integrity: sha512-0Qw60jl1HPbHaqiiIKIMVBufCzeRviMGyrI1pJ7u1kfWrvHcP+2PH1pQ9SSXNIie5/2dTwsyp0cQbwDEyZGjPA==}
     engines: {node: '>=22'}
 
-  '@peiyanlu/release@2.2.0':
-    resolution: {integrity: sha512-+X6APvgCz8Z4gTnbOpEbHs+BIo97P5+Fx290n9sNcH6cGniMASCC5jFxP/LllF0yNhW/PxIwtQoexbXOjdFW2w==}
+  '@peiyanlu/release@2.2.1':
+    resolution: {integrity: sha512-sJBwlnJyTshLSqdoZ47yKZBdMyOZqGQOY/tU7aiibfjtVyzWIMKbwguCCJyIwql4IuEbYs/qRmGJ4/uhHa4q2Q==}
     engines: {node: '>=22.18'}
     hasBin: true
 
@@ -798,10 +786,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  ansis@4.3.1:
-    resolution: {integrity: sha512-BJ8/l4R5LRE7hW9WdSuGYrLSHi2ynxeFpDFbH0K/CgNeY/tyhk+vO6TYxXC5r5CpUhNVX310xzPsN/H9lCdfOA==}
-    engines: {node: '>=14'}
-
   ansis@4.5.0:
     resolution: {integrity: sha512-KwIVkfFfJSSzBmZhDGuTmkhWqTdyB5oNVzzznBJbBZ5bZtHiqSrcugRF0RKJKT4Ss3d7ZrcjnlFVDlQNmtWfWw==}
     engines: {node: '>=14'}
@@ -872,11 +856,6 @@ packages:
   conventional-commits-filter@6.0.1:
     resolution: {integrity: sha512-cs+LadpH7Kpw0M3k8wurk+sOVVDAENA0iK4OBOrkL94j5lEVYRJ4j3zd2bhY9qgzyrPqthdcYT3axzRN7AliMg==}
     engines: {node: '>=22'}
-
-  conventional-commits-parser@7.1.2:
-    resolution: {integrity: sha512-O+x4N2yH+ijvqWlIyTHsXTAP+algNWgGbjY2duCe8w2vUMvUB95cLRslCPfTMQyLAKlet3bhZTdu6ozn4M+QJQ==}
-    engines: {node: '>=22'}
-    hasBin: true
 
   conventional-commits-parser@7.1.4:
     resolution: {integrity: sha512-TW3PZHi6hwF4cyu7KKc4kNqD1cgg8AkkK5ge9+zsEfpjaSXOeeIQyNWBr7kx5hR2wFuKVmr0be37RzcpmACQIA==}
@@ -1593,15 +1572,6 @@ snapshots:
       fast-wrap-ansi: 0.2.2
       sisteransi: 2.0.0
 
-  '@conventional-changelog/git-client@3.1.2(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.2)':
-    dependencies:
-      '@simple-libs/child-process-utils': 2.0.0
-      '@simple-libs/stream-utils': 2.0.0
-      semver: 7.8.6
-    optionalDependencies:
-      conventional-commits-filter: 6.0.1
-      conventional-commits-parser: 7.1.2
-
   '@conventional-changelog/git-client@3.2.0(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.4)':
     dependencies:
       '@simple-libs/child-process-utils': 2.0.0
@@ -1771,7 +1741,7 @@ snapshots:
       minimatch: 10.2.6
       tinyglobby: 0.2.17
 
-  '@peiyanlu/release@2.2.0':
+  '@peiyanlu/release@2.2.1':
     dependencies:
       '@actions/core': 3.0.1
       '@actions/github': 9.1.1
@@ -2044,8 +2014,6 @@ snapshots:
   '@yuku-toolchain/win32-x64@0.28.1':
     optional: true
 
-  ansis@4.3.1: {}
-
   ansis@4.5.0: {}
 
   argue-cli@3.1.0: {}
@@ -2098,22 +2066,17 @@ snapshots:
 
   conventional-changelog@8.1.3:
     dependencies:
-      '@conventional-changelog/git-client': 3.1.2(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.2)
+      '@conventional-changelog/git-client': 3.2.0(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.4)
       '@simple-libs/hosted-git-info': 2.0.0
       '@simple-libs/normalize-package-data': 1.0.0
       argue-cli: 3.1.0
       conventional-changelog-preset-loader: 6.0.1
       conventional-changelog-writer: 9.2.1
       conventional-commits-filter: 6.0.1
-      conventional-commits-parser: 7.1.2
+      conventional-commits-parser: 7.1.4
       fd-package-json: 2.0.0
 
   conventional-commits-filter@6.0.1: {}
-
-  conventional-commits-parser@7.1.2:
-    dependencies:
-      '@simple-libs/stream-utils': 2.0.0
-      argue-cli: 3.1.0
 
   conventional-commits-parser@7.1.4:
     dependencies:
