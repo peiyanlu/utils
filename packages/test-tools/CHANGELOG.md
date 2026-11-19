@@ -1,3 +1,9 @@
+## <small>[1.0.1](https://github.com/peiyanlu/utils/compare/test-tools%401.0.0...test-tools%401.0.1) (2026-11-19)</small>
+
+### 🐛 Bug 修复
+
+* 修复 `readFileSync` 参数 ([9e0d875](https://github.com/peiyanlu/utils/commit/9e0d875510583801a156938527951c66d27acc0e))
+
 ## 1.0.0 (2026-11-05)
 
 ### ⚠ BREAKING CHANGES

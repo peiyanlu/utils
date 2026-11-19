@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/peiyanlu/utils/compare/ts-utils%401.0.0...ts-utils%401.1.0) (2026-11-19)
+
+### ✨ 新功能
+
+* 新增合并、去重及条件对象工具 ([fda4598](https://github.com/peiyanlu/utils/commit/fda4598d492a36c2aaa91c33f9f6cc37b8bc7f09))
+
 ## 1.0.0 (2026-11-05)
 
 ### ⚠ BREAKING CHANGES
