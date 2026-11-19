@@ -1,3 +1,9 @@
+## <small>[1.1.1](https://github.com/peiyanlu/utils/compare/cli-utils%401.1.0...cli-utils%401.1.1) (2026-11-19)</small>
+
+### 🐛 Bug 修复
+
+* 修复模块导出缺失 ([d909102](https://github.com/peiyanlu/utils/commit/d909102f15cddc5d2d8f34543362865b163ed306))
+
 ## [1.1.0](https://github.com/peiyanlu/utils/compare/cli-utils%401.0.0...cli-utils%401.1.0) (2026-11-19)
 
 ### ✨ 新功能
