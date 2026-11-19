@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/peiyanlu/utils/compare/cli-utils%401.0.0...cli-utils%401.1.0) (2026-11-19)
+
+### ✨ 新功能
+
+* 新增 prompts 及 package-manager 工具模块 ([a46d22b](https://github.com/peiyanlu/utils/commit/a46d22ba2eea6b31eec72c6fce34a7ab82162cd6))
+
 ## 1.0.0 (2026-11-05)
 
 ### ⚠ BREAKING CHANGES

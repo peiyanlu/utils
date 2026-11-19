@@ -1,3 +1,9 @@
+## [0.2.0](https://github.com/peiyanlu/utils/compare/node-utils%400.1.1...node-utils%400.2.0) (2026-11-19)
+
+### ✨ 新功能
+
+* 新增支持链式调用的 `styleText` 便利包装 ([2716630](https://github.com/peiyanlu/utils/commit/2716630315db6627161de3813c76746bc5ecea64))
+
 ## <small>[0.1.1](https://github.com/peiyanlu/utils/compare/node-utils%400.1.0...node-utils%400.1.1) (2026-11-05)</small>
 
 ### 🐛 Bug 修复
